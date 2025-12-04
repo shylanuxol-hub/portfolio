@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shyla Nuxol</title>
-  <meta name="description" content="interactive media artist & creative coder" />
+  <meta name="description" content="interactive media artist and creative coder" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
     
@@ -15,20 +15,11 @@
       --link: #ffb8d4;
       --link-hover: #fff;
       --accent: #ffb8d4;
-      --accent2: #ffb8d4;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    ::selection {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    html {
-      font-size: 18px;
-      scroll-behavior: smooth;
-    }
+    ::selection { background: var(--accent); color: var(--bg); }
+    html { font-size: 18px; scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -38,352 +29,117 @@
       padding: 3rem 2rem 6rem;
       max-width: 1200px;
       margin: 0 auto;
+      min-height: 100vh;
     }
 
-    a {
-      color: var(--link);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+    a { color: var(--link); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
 
-    a:hover {
-      color: var(--link-hover);
-      text-decoration: underline;
-    }
-
-    /* two column layout */
     .main-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.4fr 1fr;
       gap: 4rem;
       align-items: start;
     }
 
-    /* left column */
-    .left-column {
-      position: sticky;
-      top: 3rem;
-    }
+    .left-column { position: sticky; top: 3rem; }
 
-    /* header */
-    header {
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
+    header { margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
 
     .avatar {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
+      width: 70px; height: 70px; border-radius: 50%;
       background: linear-gradient(135deg, rgba(255,184,212,0.2), rgba(255,255,255,0.05));
       border: 2px solid rgba(255,255,255,0.12);
-      object-fit: cover;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--accent);
-      font-size: 1.5rem;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1.5rem; flex-shrink: 0;
     }
 
-    .header-text {
-      flex: 1;
-    }
+    .name { font-size: 1.6rem; font-weight: 500; margin-bottom: 0.25rem; }
+    .label { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+    .tagline { font-size: 1.4rem; font-style: italic; margin: 1.5rem 0; color: var(--accent); }
+    .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 1.5rem; }
 
-    .name {
-      font-size: 1.6rem;
-      font-weight: 500;
-      letter-spacing: 0.02em;
-      margin-bottom: 0.25rem;
-    }
+    .about { margin: 2rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .about p { margin-bottom: 1rem; }
+    .about-link { margin-top: 1.25rem; }
+    .about-link a { color: var(--accent); font-style: italic; }
 
-    .label {
-      font-size: 0.85rem;
-      color: var(--muted);
-      font-style: italic;
-    }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; margin: 1.5rem 0; font-size: 0.9rem; }
+    .nav-links a { color: var(--muted); }
+    .nav-links a:hover { color: var(--link); }
 
-    /* tagline */
-    .tagline {
-      font-size: 1.4rem;
-      font-style: italic;
-      margin: 1.5rem 0;
-      line-height: 1.5;
-      color: var(--accent);
-    }
+    .tools { font-size: 0.9rem; color: var(--muted); margin: 1.5rem 0 0; }
+    .tools span { display: inline-block; padding: 0.2rem 0.5rem; margin: 0.15rem 0.25rem 0.15rem 0; background: rgba(255,255,255,0.04); border-radius: 3px; font-size: 0.75rem; }
 
-    .subtitle {
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-    }
+    .currently { margin-bottom: 2rem; padding: 1rem 1.25rem; background: rgba(255,255,255,0.02); border-left: 2px solid var(--accent); }
+    .currently-title { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 0.75rem; }
+    .currently ul { list-style: none; }
+    .currently li { padding: 0.25rem 0; color: var(--muted); }
+    .currently li::before { content: "✧ "; color: var(--accent); }
 
-    /* about */
-    .about {
-      margin: 2rem 0;
-      padding: 1.5rem 0;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    .section-title { font-size: 0.85rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
 
-    .about p {
-      margin-bottom: 1rem;
-      color: var(--text);
-    }
-
-    .about p:last-child {
-      margin-bottom: 0;
-    }
-
-    .about-link {
-      margin-top: 1.25rem;
-    }
-
-    .about-link a {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    /* navigation links */
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem 1rem;
-      margin: 1.5rem 0;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a {
-      color: var(--muted);
-    }
-
-    .nav-links a:hover {
-      color: var(--link);
-    }
-
-    /* skills inline */
-    .tools {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin: 1rem 0;
-    }
-
-    .tools span {
-      display: inline-block;
-      padding: 0.2rem 0.5rem;
-      margin: 0.15rem 0.25rem 0.15rem 0;
-      background: rgba(255,255,255,0.04);
-      border-radius: 3px;
-      font-size: 0.75rem;
-    }
-
-    /* currently section */
-    .currently {
-      margin: 2rem 0;
-      padding: 1rem 1.25rem;
-      background: rgba(255,255,255,0.02);
-      border-left: 2px solid var(--accent);
-    }
-
-    .currently-title {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .currently ul {
-      list-style: none;
-    }
-
-    .currently li {
-      padding: 0.25rem 0;
-      color: var(--muted);
-    }
-
-    .currently li::before {
-      content: "✧ ";
-      color: var(--accent);
-    }
-
-    /* right column - projects */
-    .right-column {
-      padding-top: 0.5rem;
-    }
-
-    .section-title {
-      font-size: 0.85rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-
-    /* project grid with varying sizes */
-    .project-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
+    .project-grid { display: flex; flex-direction: column; gap: 0.75rem; }
 
     .project-item {
-      position: relative;
-      display: block;
-      padding: 1rem 1.25rem;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 6px;
-      transition: all 0.3s ease;
-      overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      display: block; padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 6px; transition: all 0.3s ease;
     }
 
     .project-item:hover {
-      background: rgba(255,255,255,0.06);
-      border-color: rgba(255,255,255,0.15);
-      text-decoration: none;
-      transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+      background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15);
+      text-decoration: none; transform: translateX(4px);
     }
 
-    /* size variations */
-    .project-item.size-sm {
-      padding: 0.85rem 1rem;
-    }
+    .project-item .project-title { font-size: 1.05rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+    .project-item:hover .project-title { color: var(--accent); }
+    .project-item .project-type { font-size: 0.75rem; color: var(--accent); font-style: italic; }
+    .project-item .project-desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
 
-    .project-item.size-md {
-      padding: 1.1rem 1.25rem;
-    }
-
-    .project-item.size-lg {
-      padding: 1.4rem 1.5rem;
-    }
-
-    .project-item.size-xl {
-      padding: 1.6rem 1.75rem;
-    }
-
-    .project-item .project-title {
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 0.25rem;
-      transition: color 0.2s;
-    }
-
-    .project-item.size-lg .project-title,
-    .project-item.size-xl .project-title {
-      font-size: 1.25rem;
-    }
-
-    .project-item.size-sm .project-title {
-      font-size: 1rem;
-    }
-
-    .project-item:hover .project-title {
-      color: var(--accent);
-    }
-
-    .project-item .project-meta {
-      display: flex;
-      align-items: baseline;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    .project-item .project-type {
-      font-size: 0.75rem;
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    .project-item .project-desc {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-top: 0.35rem;
-    }
-
-    /* preview on hover */
-    .project-preview {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 45%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      pointer-events: none;
+    /* floating preview that appears randomly */
+    .floating-preview {
+      position: fixed;
+      width: 280px;
+      height: 180px;
+      background: var(--bg);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
       overflow: hidden;
-      border-radius: 0 3px 3px 0;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
     }
 
-    .project-preview::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, var(--bg) 0%, transparent 30%);
-      z-index: 1;
+    .floating-preview.visible {
+      opacity: 1;
     }
 
-    .project-preview iframe,
-    .project-preview img {
+    .floating-preview iframe,
+    .floating-preview img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border: none;
-      transform: scale(1.1);
     }
 
-    .project-item:hover .project-preview {
-      opacity: 0.6;
-    }
+    footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; color: var(--muted); grid-column: 1 / -1; }
 
-    /* footer */
-    footer {
-      margin-top: 4rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 0.85rem;
-      color: var(--muted);
-      grid-column: 1 / -1;
-    }
-
-    /* mobile */
     @media (max-width: 850px) {
-      .main-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .left-column {
-        position: static;
-      }
-
-      .project-preview {
-        display: none;
-      }
-
-      body {
-        padding: 2rem 1.25rem 4rem;
-        font-size: 16px;
-      }
-      
-      .tagline {
-        font-size: 1.2rem;
-      }
+      .main-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .left-column { position: static; }
+      .floating-preview { display: none; }
+      body { padding: 2rem 1.25rem 4rem; font-size: 16px; }
+      .tagline { font-size: 1.2rem; }
     }
   </style>
 </head>
 <body>
-
   <div class="main-grid">
     <div class="left-column">
       <header>
-        <!-- Replace this div with: <img src="your-photo.jpg" alt="Shyla Nuxol" class="avatar"> -->
         <div class="avatar">✦</div>
         <div class="header-text">
           <div class="name">Shyla Nuxol</div>
@@ -421,7 +177,9 @@
         <span>Ableton</span>
         <span>Blender</span>
       </div>
+    </div>
 
+    <div class="right-column">
       <div class="currently">
         <div class="currently-title">currently...</div>
         <ul>
@@ -430,65 +188,38 @@
           <li> music production + live performance</li>
         </ul>
       </div>
-    </div>
 
-    <div class="right-column">
       <div class="section-title">projects</div>
 
       <div class="project-grid">
-        <a href="doomscroller.html" class="project-item size-lg">
+        <a href="doomscroller.html" class="project-item" data-preview="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" data-type="iframe">
           <div class="project-title">doomscroller</div>
-          <div class="project-meta">
-            <span class="project-type">flash game</span>
-          </div>
+          <span class="project-type">flash game</span>
           <div class="project-desc">culture jam on attention and creation</div>
-          <div class="project-preview">
-            <iframe src="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" loading="lazy" title="doomscroller preview"></iframe>
-          </div>
         </a>
 
-        <a href="what-were-the-humans-like.html" class="project-item size-md">
+        <a href="what-were-the-humans-like.html" class="project-item" data-preview="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" data-type="iframe">
           <div class="project-title">what were the humans like?</div>
-          <div class="project-meta">
-            <span class="project-type">interactive fiction</span>
-          </div>
+          <span class="project-type">interactive fiction</span>
           <div class="project-desc">post-human AI consciousness experience</div>
-          <div class="project-preview">
-            <iframe src="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" loading="lazy" title="what were the humans like preview"></iframe>
-          </div>
         </a>
 
-        <a href="cybernetic-garden.html" class="project-item size-sm">
+        <a href="cybernetic-garden.html" class="project-item" data-preview="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" data-type="iframe">
           <div class="project-title">cybernetic garden</div>
-          <div class="project-meta">
-            <span class="project-type">interactive fiction</span>
-          </div>
+          <span class="project-type">interactive fiction</span>
           <div class="project-desc">digital ecosystem simulation</div>
-          <div class="project-preview">
-            <iframe src="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" loading="lazy" title="cybernetic garden preview"></iframe>
-          </div>
         </a>
 
-        <a href="signal-shrine.html" class="project-item size-xl">
+        <a href="signal-shrine.html" class="project-item" data-preview="https://img.youtube.com/vi/0MpLVE_LbtI/hqdefault.jpg" data-type="image">
           <div class="project-title">signal shrine</div>
-          <div class="project-meta">
-            <span class="project-type">installation</span>
-          </div>
-          <div class="project-desc">CRT oracle installation with NFC cards & Max/MSP/Jitter</div>
-          <div class="project-preview">
-            <img src="https://img.youtube.com/vi/0MpLVE_LbtI/maxresdefault.jpg" alt="signal shrine preview" loading="lazy">
-          </div>
+          <span class="project-type">installation</span>
+          <div class="project-desc">CRT oracle installation with NFC cards and Max/MSP/Jitter</div>
         </a>
 
-        <a href="friendly-computer-virus.html" class="project-item size-md">
+        <a href="friendly-computer-virus.html" class="project-item" data-preview="https://shylanuxol-hub.github.io/interactive-fortune/" data-type="iframe">
           <div class="project-title">kichi ~ good luck (friendly computer virus)</div>
-          <div class="project-meta">
-            <span class="project-type">web dev/design</span>
-          </div>
+          <span class="project-type">web dev/design</span>
           <div class="project-desc">interactive web experience with oracle-like qualities</div>
-          <div class="project-preview">
-            <iframe src="https://shylanuxol-hub.github.io/interactive-fortune/" loading="lazy" title="friendly computer virus preview"></iframe>
-          </div>
         </a>
       </div>
     </div>
@@ -498,5 +229,54 @@
     </footer>
   </div>
 
+  <!-- floating preview element -->
+  <div class="floating-preview" id="floatingPreview"></div>
+
+  <script>
+    const preview = document.getElementById('floatingPreview');
+    const projects = document.querySelectorAll('.project-item[data-preview]');
+    let currentContent = '';
+
+    function getRandomPosition() {
+      const padding = 40;
+      const previewWidth = 280;
+      const previewHeight = 180;
+      
+      const maxX = window.innerWidth - previewWidth - padding;
+      const maxY = window.innerHeight - previewHeight - padding;
+      
+      const x = padding + Math.random() * (maxX - padding);
+      const y = padding + Math.random() * (maxY - padding);
+      
+      return { x, y };
+    }
+
+    projects.forEach(project => {
+      project.addEventListener('mouseenter', () => {
+        const previewUrl = project.dataset.preview;
+        const previewType = project.dataset.type;
+        
+        // only update content if it changed
+        if (currentContent !== previewUrl) {
+          currentContent = previewUrl;
+          if (previewType === 'iframe') {
+            preview.innerHTML = `<iframe src="${previewUrl}" loading="lazy"></iframe>`;
+          } else {
+            preview.innerHTML = `<img src="${previewUrl}" alt="preview">`;
+          }
+        }
+        
+        // random position each hover
+        const pos = getRandomPosition();
+        preview.style.left = pos.x + 'px';
+        preview.style.top = pos.y + 'px';
+        preview.classList.add('visible');
+      });
+
+      project.addEventListener('mouseleave', () => {
+        preview.classList.remove('visible');
+      });
+    });
+  </script>
 </body>
 </html>
