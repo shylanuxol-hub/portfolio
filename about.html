@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Shyla Nuxol</title>
+  <meta name="description" content="About Shyla Nuxol – Interactive media artist & creative coder" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+    
+    :root {
+      --bg: #0a0a0c;
+      --text: #ffffff;
+      --muted: #aaa;
+      --link: #ffb8d4;
+      --link-hover: #fff;
+      --accent: #ffb8d4;
+      --accent2: #ffb8d4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    html {
+      font-size: 17px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.65;
+      padding: 3rem 2rem 6rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+
+    .back-link:hover {
+      color: var(--link);
+    }
+
+    .name {
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Page title */
+    .page-title {
+      font-size: 2rem;
+      font-weight: 500;
+      margin: 2rem 0 1.5rem;
+      color: var(--accent);
+    }
+
+    /* Content sections */
+    .content {
+      margin: 2rem 0;
+    }
+
+    .content p {
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 3rem 0 1rem;
+    }
+
+    .content h2:first-child {
+      margin-top: 0;
+    }
+
+    /* Lists */
+    .content ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .content li {
+      padding: 0.4rem 0;
+      color: var(--text);
+    }
+
+    .content li::before {
+      content: "· ";
+      color: var(--accent);
+      margin-right: 0.25rem;
+    }
+
+    /* Interests grid */
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1rem 0;
+    }
+
+    .interests span {
+      padding: 0.35rem 0.75rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 3px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Contact section */
+    .contact {
+      margin: 3rem 0;
+      padding: 1.5rem;
+      background: rgba(255,255,255,0.02);
+      border-left: 2px solid var(--accent);
+    }
+
+    .contact p {
+      margin-bottom: 1rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* Divider */
+    .divider {
+      text-align: center;
+      color: var(--muted);
+      margin: 2.5rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body {
+        padding: 2rem 1.25rem 4rem;
+        font-size: 16px;
+      }
+      
+      .page-title {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="portfolio.html" class="back-link">← Back to portfolio</a>
+    <div class="name">Shyla Nuxol</div>
+    <div class="label">About</div>
+  </header>
+
+  <h1 class="page-title">About Me</h1>
+
+  <div class="content">
+    <h2>Background</h2>
+    <p>I'm a Digital Media graduate student and multidisciplinary artist working at the intersection of creative coding, interactive installation, and visual art. My practice brings together technical programming skills with visual art creation, developing installations and browser-based experiences.</p>
+    
+    <p>I work primarily with p5.js, Max/MSP/Jitter, TouchDesigner, and Arduino — tools that let me bridge the digital and physical, creating work that responds to and interacts with the people who encounter it.</p>
+
+    <h2>What I'm Exploring</h2>
+    <p>My work explores themes of digital culture, the attention economy, and human-technology relationships. I'm interested in how we navigate increasingly mediated worlds, how technology shapes our attention and creativity, and how ancient practices like divination can be reimagined through modern tools.</p>
+    
+    <p>I'm drawn to the idea of technology as ritual — screens as shrines, code as incantation, interaction as offering. Projects like Signal Shrine combine CRT televisions, NFC cards, and video processing to create spaces where old and new forms of meaning-making collide.</p>
+
+    <h2>Beyond Code</h2>
+    <p>When I'm not debugging Max patches or writing p5.js sketches, I'm making digital art in Procreate, producing electronic music, or performing live sets. My visual work draws from Y2K aesthetics, anime, cyberpunk, and digital mysticism. I'm also always on the hunt for CRT televisions for my next installation.</p>
+
+    <h2>Tools</h2>
+    <ul>
+      <li>Creative coding: p5.js, Processing, JavaScript</li>
+      <li>Audio/visual: Max/MSP/Jitter, TouchDesigner, Ableton</li>
+      <li>Physical computing: Arduino, RFID/NFC</li>
+      <li>Visual art: Procreate, digital illustration</li>
+    </ul>
+
+    <h2>Interests</h2>
+    <div class="interests">
+      <span>interactive art</span>
+      <span>browser-based experiences</span>
+      <span>physical computing</span>
+      <span>electronic music</span>
+      <span>CRT aesthetics</span>
+      <span>digital mysticism</span>
+      <span>Y2K design</span>
+      <span>culture jamming</span>
+      <span>live performance</span>
+    </div>
+
+    <div class="divider">✦ ✦ ✦</div>
+
+    <div class="contact">
+      <p>Want to collaborate, chat, or book me for a set?</p>
+      <div class="contact-links">
+        <a href="https://www.instagram.com/shy.berspace/">Instagram</a>
+        <a href="https://www.linkedin.com/in/shyla-nuxol-489bb31b8/">LinkedIn</a>
+        <a href="https://github.com/shylanuxol-hub">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p><a href="portfolio.html">← Back to portfolio</a></p>
+  </footer>
+
+</body>
+</html>
