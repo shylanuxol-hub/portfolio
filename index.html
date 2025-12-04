@@ -59,6 +59,12 @@
     .tagline { font-size: 1.4rem; font-style: italic; margin: 1.5rem 0; color: var(--accent); }
     .subtitle { color: var(--muted); font-size: 1rem; margin-bottom: 1.5rem; }
 
+    .header-meta { display: flex; align-items: center; gap: 0.75rem; }
+
+    .contact-link { font-size: 0.85rem; color: var(--accent); font-style: italic; }
+
+    .contact-link:hover { color: var(--link-hover); }
+
     .about { margin: 2rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
     .about p { margin-bottom: 1rem; }
     .about-link { margin-top: 1.25rem; }
@@ -134,7 +140,10 @@
         <div class="avatar">✦</div>
         <div class="header-text">
           <div class="name">Shyla Nuxol</div>
-          <div class="label">information</div>
+          <div class="header-meta">
+            <span class="label">information</span>
+            <a href="mailto:shylanuxol@gmail.com" class="contact-link">contact</a>
+          </div>
         </div>
       </header>
 
