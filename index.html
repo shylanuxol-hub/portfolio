@@ -1,218 +1,441 @@
+Portfolio · HTML
+Copy
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shyla Nuxol – Portfolio</title>
-  <meta name="description" content="Portfolio of p5.js sketches and other projects." />
+  <title>Shyla Nuxol</title>
+  <meta name="description" content="Interactive media artist & creative coder" />
   <style>
-    :root{
-      --bg:#0b0d10;--card:#11151a;--ink:#e8eef6;--muted:#b0b8c3;--pop:#6dd6ff;--accent:#9bffaf;
-      --radius:18px;--shadow:0 10px 30px rgba(0,0,0,.35)
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+    
+    :root {
+      --bg: #0a0a0c;
+      --text: #e8e8e8;
+      --muted: #888;
+      --link: #b8d4ff;
+      --link-hover: #fff;
+      --accent: #ffd6e8;
+      --accent2: #c4f0c5;
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;background:linear-gradient(180deg,#0b0d10 0%, #0e1116 100%);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
-    a{color:var(--pop);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:1100px;margin:0 auto;padding:28px}
-    header{display:grid;gap:12px;align-items:center;grid-template-columns:auto 1fr auto;flex-wrap:wrap}
-    .avatar{width:70px;height:70px;border-radius:50%;border:2px solid rgba(255,255,255,.08);box-shadow:var(--shadow);object-fit:cover}
-    .title h1{font-size:28px;margin:0}
-    .title p{margin:2px 0 0;color:var(--muted)}
-    .links a{display:inline-block;margin-left:10px;padding:8px 12px;border-radius:999px;background:#141a22;border:1px solid rgba(255,255,255,.06)}
 
-    .hero{margin:28px 0;padding:20px 22px;border-radius:var(--radius);background:radial-gradient(80% 100% at 0% 0%, rgba(109,214,255,.15), transparent 60%),
-           radial-gradient(80% 120% at 100% 0%, rgba(155,255,175,.12), transparent 60%), var(--card);box-shadow:var(--shadow)}
-    .hero h2{margin:0 0 6px;font-size:24px}
-    .hero p{margin:0;color:var(--muted)}
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0}
-    .tab{padding:8px 12px;border-radius:999px;background:#151a22;border:1px solid rgba(255,255,255,.06);cursor:pointer;color:var(--muted)}
-    .tab.active{background:linear-gradient(90deg, rgba(109,214,255,.2), rgba(155,255,175,.18));color:var(--ink);border-color:rgba(255,255,255,.14)}
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
 
-    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
-    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
-    .thumb{position:relative;aspect-ratio:16/10;background:#0e1319;display:flex;align-items:center;justify-content:center}
-    .thumb img{width:100%;height:100%;object-fit:cover}
-    .thumb iframe{width:100%;height:100%;border:0}
-    .badge{position:absolute;top:10px;left:10px;padding:6px 10px;border-radius:999px;background:rgba(0,0,0,.5);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.1);font-size:12px}
-    .body{padding:14px 14px 18px}
-    .body h3{margin:0 0 6px;font-size:18px}
-    .tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
-    .tag{font-size:12px;color:var(--muted);padding:4px 8px;border:1px solid rgba(255,255,255,.08);border-radius:999px}
-    .meta{margin-top:10px;color:var(--muted);font-size:14px}
+    html {
+      font-size: 15px;
+      scroll-behavior: smooth;
+    }
 
-    footer{margin:36px 0 14px;color:var(--muted);text-align:center}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.65;
+      padding: 3rem 2rem 6rem;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .name {
+      font-size: 1.4rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      margin-bottom: 0.25rem;
+    }
+
+    .label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* Tagline */
+    .tagline {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin: 2rem 0;
+      line-height: 1.5;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    /* About */
+    .about {
+      margin: 2.5rem 0;
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .about p {
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .about p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Navigation links */
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.25rem;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--link);
+    }
+
+    /* Section headers */
+    .section-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 3rem 0 1rem;
+    }
+
+    /* Featured work (larger cards) */
+    .featured {
+      display: grid;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .featured-item {
+      display: block;
+      padding: 1rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 4px;
+      transition: all 0.2s;
+    }
+
+    .featured-item:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.12);
+      text-decoration: none;
+    }
+
+    .featured-item .title {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.35rem;
+    }
+
+    .featured-item .desc {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .featured-item .tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      color: var(--accent2);
+      margin-top: 0.5rem;
+    }
+
+    /* Project list (index style) */
+    .project-list {
+      list-style: none;
+    }
+
+    .project-list li {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+
+    .project-list li:last-child {
+      border-bottom: none;
+    }
+
+    .project-list .project-title {
+      color: var(--link);
+    }
+
+    .project-list .project-title:hover {
+      color: var(--link-hover);
+    }
+
+    .project-list .project-type {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .project-list .project-desc {
+      flex-basis: 100%;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    /* Currently section */
+    .currently {
+      margin: 2rem 0;
+      padding: 1rem 1.25rem;
+      background: rgba(255,255,255,0.02);
+      border-left: 2px solid var(--accent);
+    }
+
+    .currently-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .currently ul {
+      list-style: none;
+    }
+
+    .currently li {
+      padding: 0.25rem 0;
+      color: var(--muted);
+    }
+
+    .currently li::before {
+      content: "+ ";
+      color: var(--accent);
+    }
+
+    /* Skills inline */
+    .tools {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 1rem 0;
+    }
+
+    .tools span {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      margin: 0.15rem 0.25rem 0.15rem 0;
+      background: rgba(255,255,255,0.04);
+      border-radius: 3px;
+      font-size: 0.8rem;
+    }
+
+    /* Decorative */
+    .divider {
+      text-align: center;
+      color: var(--muted);
+      margin: 2.5rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.5em;
+    }
+
+    /* Year marker */
+    .year {
+      font-size: 0.8rem;
+      color: var(--accent2);
+      margin: 2rem 0 1rem;
+      font-style: italic;
+    }
+
+    /* Inline image */
+    .inline-img {
+      display: inline-block;
+      width: 60px;
+      height: 40px;
+      object-fit: cover;
+      vertical-align: middle;
+      margin: 0 0.5rem;
+      border-radius: 2px;
+      opacity: 0.85;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    footer .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      body {
+        padding: 2rem 1.25rem 4rem;
+        font-size: 14px;
+      }
+      
+      .tagline {
+        font-size: 1.3rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="title">
-        <h1>Shyla Nuxol</h1>
-        <p>Designer • Developer • Student — showcasing p5.js sketches and other works</p>
-      </div>
-      <nav class="links" aria-label="social links">
-        <a href="https://docs.google.com/document/d/1RNv4gVnEL2y4ve83EfSZKOjg125vOKDHgmdDsAmvm9k/edit?usp=sharing">Resume</a>
-        <a href="https://github.com/shylanuxol-hub">GitHub</a>
-        <a href="https://www.linkedin.com/in/shyla-nuxol-489bb31b8/">LinkedIn</a>
-        <a href=https://shyberspace.myportfolio.com/">Personal Art</a>
-        <a href=https://www.instagram.com/shy.berspace/">Instagram</a>
-        <a href=https://open.spotify.com/artist/4vOfiy1fwnje31FxHpv0qM">Spotify</a>
-        <a href=https://soundcloud.com/shy_berspace">Soundcloud</a>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <h2>Hi! I make playful, interactive things.</h2>
-      <p>Below are my p5.js experiments and a few non-code projects. Everything here runs on GitHub Pages and is easy to update.</p>
-    </section>
+  <header>
+    <div class="name">Shyla Nuxol</div>
+    <div class="label">Information</div>
+  </header>
 
-    <div class="tabs" role="tablist">
-      <button class="tab active" data-filter="all" role="tab" aria-selected="true">All</button>
-      <button class="tab" data-filter="p5" role="tab">p5.js</button>
-      <button class="tab" data-filter="other" role="tab">Other</button>
-    </div>
+  <p class="tagline">Making playful things at the intersection of code, art, and ritual</p>
+  <p class="subtitle">Interactive media artist, creative coder, electronic musician<br>exploring digital culture, attention, and human-technology relationships</p>
 
-    <section class="grid" id="grid" aria-live="polite"></section>
-    <footer>© <span id="y"></span> Shyla Nuxol • Built with plain HTML/CSS/JS • Hosted on GitHub Pages</footer>
+  <nav class="nav-links">
+    <a href="https://docs.google.com/document/d/1RNv4gVnEL2y4ve83EfSZKOjg125vOKDHgmdDsAmvm9k/edit?usp=sharing">Resume</a>
+    <a href="https://github.com/shylanuxol-hub">GitHub</a>
+    <a href="https://www.linkedin.com/in/shyla-nuxol-489bb31b8/">LinkedIn</a>
+    <a href="https://shyberspace.myportfolio.com/">Personal Art</a>
+    <a href="https://www.instagram.com/shy.berspace/">Instagram</a>
+    <a href="https://open.spotify.com/artist/4vOfiy1fwnje31FxHpv0qM">Spotify</a>
+    <a href="https://soundcloud.com/shy_berspace">Soundcloud</a>
+  </nav>
+
+  <section class="about">
+    <p>I'm a Digital Media graduate student working with creative coding tools — p5.js, Max/MSP/Jitter, TouchDesigner, Arduino — to create browser-based experiences and interactive installations.</p>
+    <p>My practice explores the attention economy, digital mysticism, and how we relate to technology in increasingly mediated worlds. When I'm not debugging Max patches, I'm making digital art in Procreate, producing electronic music, or hunting for CRT televisions.</p>
+  </section>
+
+  <div class="tools">
+    <span>p5.js</span>
+    <span>Max/MSP</span>
+    <span>TouchDesigner</span>
+    <span>Arduino</span>
+    <span>Procreate</span>
+    <span>Ableton</span>
   </div>
 
-<script>
-// ==== HOW TO ADD PROJECTS =====================================================
-// Each entry below becomes a card automatically.
-// type: "p5" renders an iframe (use the p5 Web Editor "Share → Embed" URL, or an exported sketch folder path like "sketches/my-sim/index.html");
-// type: "other" renders an image and a link to any page (PDF, itch.io, YouTube, Figma, etc.)
-// thumb: optional image shown before an iframe loads (helps performance). If omitted for p5, the iframe loads directly.
-// tags: optional list of labels.
-// ==============================================================================
-const PROJECTS = [
-  {
-    title: "doomscroller",
-    type: "p5",
-    embed: "https://editor.p5js.org/shylanuxol/full/1imkKTtbr", // replace with your embed OR local path
-    // desc: "Mouse/touch to spawn bubbles.",
-    tags: ["p5.js"]
-  },
-  {
-    title: "what were the humans like?",
-    type: "p5",
-    embed: "https://editor.p5js.org/shylanuxol/full/gONuEHeVg",
-    // desc: "Simple game demo.",
-    tags: ["p5.js"]
-  },
-  {
-    title: "cybernetic garden",
-    type: "p5",
-    embed: "https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj",
-    tags: ["p5.js"]
-  },
-  {
-    title: "rice balls",
-    type: "p5",
-    embed: "https://editor.p5js.org/shylanuxol/full/eA47bGknI",
-    tags: ["p5.js"]
-  },
-  {
-    title: "friendly computer virus",
-    type: "other",
-    link: "https://shylanuxol-hub.github.io/interactive-fortune/",
-    // desc: "Typography + layout experiment.",
-    tags: ["web dev"]
-  },
-  {
-    title: "signal shrine",
-    type: "other",
-    link: "https://youtu.be/0MpLVE_LbtI?si=xXz8DSrfihVjbhfB",
-    //img: "https://picsum.photos/800/500?random=4",
-    //desc: "Write‑up with images and code snippets.",
-    tags: ["art installation"]
-  }
-];
+  <div class="currently">
+    <div class="currently-title">Currently</div>
+    <ul>
+      <li>Building an interactive 3D character portfolio website</li>
+      <li>Developing new work exploring oracle traditions through technology</li>
+      <li>Live music performance & booking</li>
+    </ul>
+  </div>
 
-// ===== RENDER ================================================================
-const grid = document.getElementById('grid');
-const tabs = document.querySelectorAll('.tab');
-const year = document.getElementById('y');
-year.textContent = new Date().getFullYear();
-let currentFilter = 'all';
+  <div class="divider">✦ ✦ ✦</div>
 
-function card(project){
-  const isP5 = project.type === 'p5';
-  const el = document.createElement('article');
-  el.className = 'card';
+  <div class="section-title">Featured</div>
 
-  const thumb = document.createElement('div');
-  thumb.className = 'thumb';
-  const badge = document.createElement('span');
-  badge.className = 'badge';
-  badge.textContent = isP5 ? 'p5.js' : 'Project';
-  thumb.appendChild(badge);
+  <div class="featured">
+    <a href="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" class="featured-item" target="_blank">
+      <div class="title">Doomscroller</div>
+      <div class="desc">A culture jamming browser game critiquing the attention economy. You're an artist trying to create while being constantly interrupted by phone notifications.</div>
+      <div class="tag">p5.js / game</div>
+    </a>
 
-  if(isP5){
-    if(project.thumb){
-      // Lazy trap: click to load iframe, improves performance
-      const img = document.createElement('img');
-      img.src = project.thumb; img.alt = project.title;
-      thumb.appendChild(img);
-      thumb.style.cursor = 'pointer';
-      thumb.title = 'Click to load';
-      thumb.addEventListener('click', ()=>{
-        thumb.innerHTML = '';
-        thumb.appendChild(badge);
-        const ifr = document.createElement('iframe');
-        ifr.loading = 'lazy';
-        ifr.src = project.embed;
-        thumb.appendChild(ifr);
-      }, { once:true });
-    } else {
-      const ifr = document.createElement('iframe');
-      ifr.loading = 'lazy';
-      ifr.src = project.embed;
-      thumb.appendChild(ifr);
-    }
-  } else {
-    const img = document.createElement('img');
-    img.src = project.img; img.alt = project.title;
-    thumb.appendChild(img);
-  }
+    <a href="https://youtu.be/0MpLVE_LbtI?si=xXz8DSrfihVjbhfB" class="featured-item" target="_blank">
+      <div class="title">Signal Shrine</div>
+      <div class="desc">Interactive installation using CRT televisions, NFC oracle cards, and Max/MSP video processing. Reimagining divination traditions through modern technology.</div>
+      <div class="tag">installation / arduino / max/msp</div>
+    </a>
 
-  const body = document.createElement('div');
-  body.className = 'body';
-  const h3 = document.createElement('h3'); h3.textContent = project.title; body.appendChild(h3);
-  const meta = document.createElement('div'); meta.className = 'meta'; meta.textContent = project.desc || ''; body.appendChild(meta);
+    <a href="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" class="featured-item" target="_blank">
+      <div class="title">What Were the Humans Like?</div>
+      <div class="desc">A post-human AI consciousness experience. Speculative interactive fiction exploring what remains after us.</div>
+      <div class="tag">p5.js / speculative</div>
+    </a>
+  </div>
 
-  if(project.tags?.length){
-    const tags = document.createElement('div'); tags.className = 'tags';
-    project.tags.forEach(t=>{ const span=document.createElement('span'); span.className='tag'; span.textContent=t; tags.appendChild(span); });
-    body.appendChild(tags);
-  }
+  <div class="section-title">p5.js Sketches</div>
 
-  el.appendChild(thumb); el.appendChild(body);
+  <ul class="project-list">
+    <li>
+      <a href="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" class="project-title" target="_blank">Doomscroller</a>
+      <span class="project-type">game</span>
+      <div class="project-desc">Culture jam on attention and creation</div>
+    </li>
+    <li>
+      <a href="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" class="project-title" target="_blank">What Were the Humans Like?</a>
+      <span class="project-type">interactive fiction</span>
+      <div class="project-desc">Post-human AI consciousness experience</div>
+    </li>
+    <li>
+      <a href="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" class="project-title" target="_blank">Cybernetic Garden</a>
+      <span class="project-type">generative</span>
+      <div class="project-desc">Digital ecosystem simulation</div>
+    </li>
+    <li>
+      <a href="https://editor.p5js.org/shylanuxol/full/eA47bGknI" class="project-title" target="_blank">Rice Balls</a>
+      <span class="project-type">playful</span>
+      <div class="project-desc">Interactive sketch</div>
+    </li>
+  </ul>
 
-  if(isP5 && project.embed){ el.addEventListener('click', ()=> window.open(project.embed,'_blank')); el.style.cursor='pointer'; }
-  if(!isP5 && project.link){ el.addEventListener('click', ()=> window.open(project.link,'_blank')); el.style.cursor='pointer'; }
-  return el;
-}
+  <div class="section-title">Other Work</div>
 
-function render(){
-  grid.innerHTML = '';
-  PROJECTS.filter(p=> currentFilter==='all' || p.type===currentFilter)
-          .forEach(p=> grid.appendChild(card(p)));
-}
+  <ul class="project-list">
+    <li>
+      <a href="https://youtu.be/0MpLVE_LbtI?si=xXz8DSrfihVjbhfB" class="project-title" target="_blank">Signal Shrine</a>
+      <span class="project-type">installation</span>
+      <div class="project-desc">CRT oracle installation with NFC cards & Max/MSP</div>
+    </li>
+    <li>
+      <a href="https://shylanuxol-hub.github.io/interactive-fortune/" class="project-title" target="_blank">Friendly Computer Virus</a>
+      <span class="project-type">web</span>
+      <div class="project-desc">Interactive web experience with oracle-like qualities</div>
+    </li>
+  </ul>
 
-render();
+  <div class="divider">· · ·</div>
 
-// Tabs
-for(const t of tabs){
-  t.addEventListener('click', ()=>{
-    tabs.forEach(x=> x.classList.remove('active'));
-    t.classList.add('active');
-    currentFilter = t.dataset.filter;
-    render();
-  });
-}
-</script>
+  <footer>
+    <div class="links">
+      <a href="https://github.com/shylanuxol-hub">GitHub</a>
+      <a href="https://www.linkedin.com/in/shyla-nuxol-489bb31b8/">LinkedIn</a>
+      <a href="https://shyberspace.myportfolio.com/">Art Portfolio</a>
+      <a href="https://soundcloud.com/shy_berspace">Music</a>
+    </div>
+    <p>© 2025 Shyla Nuxol</p>
+  </footer>
+
 </body>
 </html>
