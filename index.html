@@ -1,5 +1,3 @@
-Portfolio
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,12 +10,12 @@ Portfolio
     
     :root {
       --bg: #0a0a0c;
-      --text: #e8e8e8;
-      --muted: #888;
-      --link: #b8d4ff;
+      --text: #ffffff;
+      --muted: #aaa;
+      --link: #ffb8d4;
       --link-hover: #fff;
-      --accent: #ffd6e8;
-      --accent2: #c4f0c5;
+      --accent: #ffb8d4;
+      --accent2: #ffb8d4;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -28,7 +26,7 @@ Portfolio
     }
 
     html {
-      font-size: 20px;
+      font-size: 17px;
       scroll-behavior: smooth;
     }
 
@@ -38,7 +36,7 @@ Portfolio
       font-family: 'EB Garamond', Georgia, serif;
       line-height: 1.65;
       padding: 3rem 2rem 6rem;
-      max-width: 720px;
+      max-width: 960px;
       margin: 0 auto;
     }
 
@@ -103,6 +101,15 @@ Portfolio
 
     .about p:last-child {
       margin-bottom: 0;
+    }
+
+    .about-link {
+      margin-top: 1.25rem;
+    }
+
+    .about-link a {
+      color: var(--accent);
+      font-style: italic;
     }
 
     /* Navigation links */
@@ -308,7 +315,7 @@ Portfolio
     @media (max-width: 600px) {
       body {
         padding: 2rem 1.25rem 4rem;
-        font-size: 14px;
+        font-size: 16px;
       }
       
       .tagline {
@@ -340,6 +347,7 @@ Portfolio
   <section class="about">
     <p>I'm a Digital Media graduate student working with creative coding tools — p5.js, Max/MSP/Jitter, TouchDesigner, Arduino — to create browser-based experiences and interactive installations.</p>
     <p>My practice explores the attention economy, digital mysticism, and how we relate to technology in increasingly mediated worlds. When I'm not debugging Max patches, I'm making digital art in Procreate, producing electronic music, or hunting for CRT televisions.</p>
+    <p class="about-link"><a href="about.html">More about me →</a></p>
   </section>
 
   <div class="tools">
@@ -365,19 +373,19 @@ Portfolio
   <div class="section-title">Featured</div>
 
   <div class="featured">
-    <a href="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" class="featured-item" target="_blank">
+    <a href="doomscroller.html" class="featured-item">
       <div class="title">Doomscroller</div>
       <div class="desc">A culture jamming browser game critiquing the attention economy. You're an artist trying to create while being constantly interrupted by phone notifications.</div>
       <div class="tag">p5.js / game</div>
     </a>
 
-    <a href="https://youtu.be/0MpLVE_LbtI?si=xXz8DSrfihVjbhfB" class="featured-item" target="_blank">
+    <a href="signal-shrine.html" class="featured-item">
       <div class="title">Signal Shrine</div>
       <div class="desc">Interactive installation using CRT televisions, NFC oracle cards, and Max/MSP video processing. Reimagining divination traditions through modern technology.</div>
       <div class="tag">installation / arduino / max/msp</div>
     </a>
 
-    <a href="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" class="featured-item" target="_blank">
+    <a href="what-were-the-humans-like.html" class="featured-item">
       <div class="title">What Were the Humans Like?</div>
       <div class="desc">A post-human AI consciousness experience. Speculative interactive fiction exploring what remains after us.</div>
       <div class="tag">p5.js / speculative</div>
@@ -388,22 +396,22 @@ Portfolio
 
   <ul class="project-list">
     <li>
-      <a href="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" class="project-title" target="_blank">Doomscroller</a>
+      <a href="doomscroller.html" class="project-title">Doomscroller</a>
       <span class="project-type">game</span>
       <div class="project-desc">Culture jam on attention and creation</div>
     </li>
     <li>
-      <a href="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" class="project-title" target="_blank">What Were the Humans Like?</a>
+      <a href="what-were-the-humans-like.html" class="project-title">What Were the Humans Like?</a>
       <span class="project-type">interactive fiction</span>
       <div class="project-desc">Post-human AI consciousness experience</div>
     </li>
     <li>
-      <a href="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" class="project-title" target="_blank">Cybernetic Garden</a>
+      <a href="cybernetic-garden.html" class="project-title">Cybernetic Garden</a>
       <span class="project-type">generative</span>
       <div class="project-desc">Digital ecosystem simulation</div>
     </li>
     <li>
-      <a href="https://editor.p5js.org/shylanuxol/full/eA47bGknI" class="project-title" target="_blank">Rice Balls</a>
+      <a href="rice-balls.html" class="project-title">Rice Balls</a>
       <span class="project-type">playful</span>
       <div class="project-desc">Interactive sketch</div>
     </li>
@@ -413,12 +421,12 @@ Portfolio
 
   <ul class="project-list">
     <li>
-      <a href="https://youtu.be/0MpLVE_LbtI?si=xXz8DSrfihVjbhfB" class="project-title" target="_blank">Signal Shrine</a>
+      <a href="signal-shrine.html" class="project-title">Signal Shrine</a>
       <span class="project-type">installation</span>
       <div class="project-desc">CRT oracle installation with NFC cards & Max/MSP</div>
     </li>
     <li>
-      <a href="https://shylanuxol-hub.github.io/interactive-fortune/" class="project-title" target="_blank">Friendly Computer Virus</a>
+      <a href="friendly-computer-virus.html" class="project-title">Friendly Computer Virus</a>
       <span class="project-type">web</span>
       <div class="project-desc">Interactive web experience with oracle-like qualities</div>
     </li>
