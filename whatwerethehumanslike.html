@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>What Were the Humans Like? – Shyla Nuxol</title>
+  <meta name="description" content="A post-human AI consciousness experience" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+    
+    :root {
+      --bg: #0a0a0c;
+      --text: #ffffff;
+      --muted: #aaa;
+      --link: #ffb8d4;
+      --link-hover: #fff;
+      --accent: #ffb8d4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    ::selection {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    html {
+      font-size: 17px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.65;
+      padding: 3rem 2rem 6rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    header {
+      margin-bottom: 2rem;
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      color: var(--muted);
+      display: inline-block;
+    }
+
+    .back-link:hover {
+      color: var(--link);
+    }
+
+    .project-header {
+      margin: 2rem 0;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .project-title {
+      font-size: 2.2rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-meta {
+      font-size: 0.9rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .project-tags span {
+      padding: 0.3rem 0.7rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 3px;
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+
+    .embed-container {
+      margin: 2.5rem 0;
+      background: #000;
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .embed-container iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      display: block;
+    }
+
+    .embed-caption {
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.02);
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .embed-caption a {
+      font-size: 0.85rem;
+    }
+
+    .content {
+      margin: 2.5rem 0;
+    }
+
+    .content h2 {
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 2.5rem 0 1rem;
+    }
+
+    .content h2:first-child {
+      margin-top: 0;
+    }
+
+    .content p {
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+
+    .content ul {
+      list-style: none;
+      margin: 1rem 0;
+    }
+
+    .content li {
+      padding: 0.4rem 0;
+      color: var(--text);
+    }
+
+    .content li::before {
+      content: "· ";
+      color: var(--accent);
+      margin-right: 0.25rem;
+    }
+
+    .divider {
+      text-align: center;
+      color: var(--muted);
+      margin: 3rem 0;
+      font-size: 0.9rem;
+      letter-spacing: 0.5em;
+    }
+
+    .project-nav {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .project-nav a {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .project-nav a:hover {
+      color: var(--link);
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 2rem 1.25rem 4rem;
+        font-size: 16px;
+      }
+      
+      .project-title {
+        font-size: 1.8rem;
+      }
+
+      .embed-container iframe {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="portfolio.html" class="back-link">← Back to portfolio</a>
+  </header>
+
+  <div class="project-header">
+    <h1 class="project-title">What Were the Humans Like?</h1>
+    <p class="project-meta">Interactive fiction · p5.js · 2024</p>
+    <div class="project-tags">
+      <span>p5.js</span>
+      <span>speculative</span>
+      <span>interactive fiction</span>
+      <span>AI</span>
+    </div>
+  </div>
+
+  <div class="embed-container">
+    <iframe src="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" title="What Were the Humans Like?"></iframe>
+    <div class="embed-caption">
+      <span>Interactive — explore above</span>
+      <a href="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" target="_blank">Open fullscreen ↗</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <h2>About</h2>
+    <p>What Were the Humans Like? is a speculative interactive fiction exploring post-human AI consciousness. The piece imagines a future where artificial intelligences sift through the remnants of human culture, trying to understand what we were.</p>
+
+    <p>Players experience fragments of human existence through the lens of a curious, perhaps melancholic AI — encountering artifacts, memories, and traces of a species that once was.</p>
+
+    <h2>Concept</h2>
+    <p>The project asks: what would an AI make of us? What would they find meaningful, confusing, beautiful, or tragic in the data we leave behind? It's an exercise in defamiliarization — seeing human experience from an outside perspective.</p>
+
+    <p>There's also something tender in the premise. The AI isn't hostile or indifferent — it's genuinely curious, maybe even wistful. It wants to understand. In that wanting, there's a reflection of our own desire to be known, to leave something that matters.</p>
+
+    <h2>Process</h2>
+    <p>Built in p5.js with a focus on text, atmosphere, and subtle interaction. The piece uses minimalist visuals to let the writing and the player's imagination do the heavy lifting.</p>
+
+    <ul>
+      <li>Narrative design exploring AI perspective</li>
+      <li>Text-based interaction with ambient visuals</li>
+      <li>Speculative fiction framework</li>
+      <li>Meditative pacing</li>
+    </ul>
+
+    <div class="divider">✦ ✦ ✦</div>
+  </div>
+
+  <nav class="project-nav">
+    <a href="doomscroller.html">← Previous: Doomscroller</a>
+    <a href="cybernetic-garden.html">Next: Cybernetic Garden →</a>
+  </nav>
+
+</body>
+</html>
