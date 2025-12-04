@@ -137,7 +137,7 @@
   <div class="main-grid">
     <div class="left-column">
       <header>
-        <img src="avatar.png" alt="Shyla Nuxol" class="avatar">
+        <img src="avatar.png" alt="Shyla Nuxol" class="avatar" data-preview="avatar.png">
         <div class="header-text">
           <div class="name">Shyla Nuxol</div>
           <div class="header-meta">
@@ -230,6 +230,7 @@
   <script>
     const preview = document.getElementById('floatingPreview');
     const projects = document.querySelectorAll('.project-item[data-preview]');
+    const avatar = document.querySelector('.avatar[data-preview]');
     let currentContent = '';
 
     function getRandomPosition() {
@@ -246,25 +247,35 @@
       return { x, y };
     }
 
+    function showPreview(previewUrl) {
+      if (currentContent !== previewUrl) {
+        currentContent = previewUrl;
+        preview.innerHTML = `<img src="${previewUrl}" alt="preview">`;
+      }
+      
+      const pos = getRandomPosition();
+      preview.style.left = pos.x + 'px';
+      preview.style.top = pos.y + 'px';
+      preview.classList.add('visible');
+    }
+
+    function hidePreview() {
+      preview.classList.remove('visible');
+    }
+
     projects.forEach(project => {
       project.addEventListener('mouseenter', () => {
-        const previewUrl = project.dataset.preview;
-        
-        if (currentContent !== previewUrl) {
-          currentContent = previewUrl;
-          preview.innerHTML = `<img src="${previewUrl}" alt="preview">`;
-        }
-        
-        const pos = getRandomPosition();
-        preview.style.left = pos.x + 'px';
-        preview.style.top = pos.y + 'px';
-        preview.classList.add('visible');
+        showPreview(project.dataset.preview);
       });
-
-      project.addEventListener('mouseleave', () => {
-        preview.classList.remove('visible');
-      });
+      project.addEventListener('mouseleave', hidePreview);
     });
-  </script>
+
+    if (avatar) {
+      avatar.addEventListener('mouseenter', () => {
+        showPreview(avatar.dataset.preview);
+      });
+      avatar.addEventListener('mouseleave', hidePreview);
+    }
+</script>
 </body>
 </html>
