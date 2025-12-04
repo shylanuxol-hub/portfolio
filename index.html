@@ -97,35 +97,26 @@
     .project-item .project-type { font-size: 0.75rem; color: var(--accent); font-style: italic; }
     .project-item .project-desc { font-size: 0.85rem; color: var(--muted); margin-top: 0.3rem; }
 
-    /* floating preview that appears randomly */
     .floating-preview {
       position: fixed;
       width: 280px;
       height: 180px;
-      background: var(--bg);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 8px;
       overflow: hidden;
       pointer-events: none;
       opacity: 0;
       transition: opacity 0.3s ease;
       z-index: 1000;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
     }
 
     .floating-preview.visible {
       opacity: 1;
     }
 
-    .floating-preview iframe,
     .floating-preview img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border: none;
     }
-
-    footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.85rem; color: var(--muted); grid-column: 1 / -1; }
 
     @media (max-width: 850px) {
       .main-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -192,38 +183,39 @@
       <div class="section-title">projects</div>
 
       <div class="project-grid">
-        <a href="doomscroller.html" class="project-item" data-preview="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" data-type="iframe">
+        <a href="doomscroller.html" class="project-item" data-preview="images/doomscroller.png">
           <div class="project-title">doomscroller</div>
           <span class="project-type">flash game</span>
           <div class="project-desc">culture jam on attention and creation</div>
         </a>
 
-        <a href="what-were-the-humans-like.html" class="project-item" data-preview="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" data-type="iframe">
+        <a href="what-were-the-humans-like.html" class="project-item" data-preview="images/what-were-the-humans-like.png">
           <div class="project-title">what were the humans like?</div>
           <span class="project-type">interactive fiction</span>
           <div class="project-desc">post-human AI consciousness experience</div>
         </a>
 
-        <a href="cybernetic-garden.html" class="project-item" data-preview="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" data-type="iframe">
+        <a href="cybernetic-garden.html" class="project-item" data-preview="images/cybernetic-garden.png">
           <div class="project-title">cybernetic garden</div>
           <span class="project-type">interactive fiction</span>
           <div class="project-desc">digital ecosystem simulation</div>
         </a>
 
-        <a href="signal-shrine.html" class="project-item" data-preview="https://img.youtube.com/vi/0MpLVE_LbtI/hqdefault.jpg" data-type="image">
+        <a href="signal-shrine.html" class="project-item" data-preview="images/signal-shrine.png">
           <div class="project-title">signal shrine</div>
           <span class="project-type">installation</span>
           <div class="project-desc">CRT oracle installation with NFC cards and Max/MSP/Jitter</div>
         </a>
 
-        <a href="friendly-computer-virus.html" class="project-item" data-preview="https://shylanuxol-hub.github.io/interactive-fortune/" data-type="iframe">
+        <a href="friendly-computer-virus.html" class="project-item" data-preview="images/friendly-computer-virus.png">
           <div class="project-title">kichi ~ good luck (friendly computer virus)</div>
           <span class="project-type">web dev/design</span>
           <div class="project-desc">interactive web experience with oracle-like qualities</div>
         </a>
       </div>
+    </div>
+  </div>
 
-  <!-- floating preview element -->
   <div class="floating-preview" id="floatingPreview"></div>
 
   <script>
@@ -248,19 +240,12 @@
     projects.forEach(project => {
       project.addEventListener('mouseenter', () => {
         const previewUrl = project.dataset.preview;
-        const previewType = project.dataset.type;
         
-        // only update content if it changed
         if (currentContent !== previewUrl) {
           currentContent = previewUrl;
-          if (previewType === 'iframe') {
-            preview.innerHTML = `<iframe src="${previewUrl}" loading="lazy"></iframe>`;
-          } else {
-            preview.innerHTML = `<img src="${previewUrl}" alt="preview">`;
-          }
+          preview.innerHTML = `<img src="${previewUrl}" alt="preview">`;
         }
         
-        // random position each hover
         const pos = getRandomPosition();
         preview.style.left = pos.x + 'px';
         preview.style.top = pos.y + 'px';
