@@ -104,8 +104,6 @@
 
     .floating-preview {
       position: fixed;
-      width: 150px;
-      height: 150px;
       overflow: hidden;
       pointer-events: none;
       opacity: 0;
@@ -137,7 +135,7 @@
   <div class="main-grid">
     <div class="left-column">
       <header>
-        <img src="avatar.png" alt="Shyla Nuxol" class="avatar" data-preview="avatar.png">
+        <img src="avatar.png" alt="Shyla Nuxol" class="avatar" data-preview="avatar.png" data-width="150" data-height="150">
         <div class="header-text">
           <div class="name">Shyla Nuxol</div>
           <div class="header-meta">
@@ -192,31 +190,31 @@
       <div class="section-title">projects</div>
 
       <div class="project-grid">
-        <a href="doomscroller.html" class="project-item" data-preview="images/doomscroller.png">
+        <a href="doomscroller.html" class="project-item" data-preview="images/doomscroller.png" data-width="200" data-height="150">
           <div class="project-title">doomscroller</div>
           <span class="project-type">flash game</span>
           <div class="project-desc">culture jam on attention and creation</div>
         </a>
 
-        <a href="signal-shrine.html" class="project-item" data-preview="images/signal-shrine.png">
+        <a href="signal-shrine.html" class="project-item" data-preview="images/signal-shrine.png" data-width="200" data-height="130">
           <div class="project-title">signal shrine</div>
           <span class="project-type">installation</span>
           <div class="project-desc">CRT oracle installation with NFC cards and Max/MSP/Jitter</div>
         </a>
 
-        <a href="friendly-computer-virus.html" class="project-item" data-preview="images/friendly-computer-virus.png">
+        <a href="friendly-computer-virus.html" class="project-item" data-preview="images/friendly-computer-virus.png" data-width="150" data-height="150">
           <div class="project-title">kichi ~ good luck (friendly computer virus)</div>
           <span class="project-type">web dev/design</span>
           <div class="project-desc">interactive web experience with oracle-like qualities</div>
         </a>
 
-        <a href="what-were-the-humans-like.html" class="project-item" data-preview="images/what-were-the-humans-like.png">
+        <a href="what-were-the-humans-like.html" class="project-item" data-preview="images/what-were-the-humans-like.png" data-width="150" data-height="150">
           <div class="project-title">what were the humans like?</div>
           <span class="project-type">interactive fiction</span>
           <div class="project-desc">post-human AI consciousness experience</div>
         </a>
 
-        <a href="cybernetic-garden.html" class="project-item" data-preview="images/cybernetic-garden.png">
+        <a href="cybernetic-garden.html" class="project-item" data-preview="images/cybernetic-garden.png" data-width="150" data-height="150">
           <div class="project-title">cybernetic garden</div>
           <span class="project-type">interactive fiction</span>
           <div class="project-desc">digital ecosystem simulation</div>
@@ -234,27 +232,28 @@
     const avatar = document.querySelector('.avatar[data-preview]');
     let currentContent = '';
 
-    function getRandomPosition() {
+    function getRandomPosition(width, height) {
       const padding = 60;
-      const previewWidth = 150;
-      const previewHeight = 150;
       
-      const maxX = window.innerWidth - previewWidth - padding;
-      const maxY = window.innerHeight - previewHeight - padding;
+      const maxX = window.innerWidth - width - padding;
+      const maxY = window.innerHeight - height - padding;
       
-      const x = padding + Math.random() * (maxX - padding);
-      const y = padding + Math.random() * (maxY - padding);
+      const x = Math.max(padding, Math.random() * maxX);
+      const y = Math.max(padding, Math.random() * maxY);
       
       return { x, y };
     }
 
-    function showPreview(previewUrl) {
+    function showPreview(previewUrl, width, height) {
       if (currentContent !== previewUrl) {
         currentContent = previewUrl;
         preview.innerHTML = `<img src="${previewUrl}" alt="preview">`;
       }
       
-      const pos = getRandomPosition();
+      preview.style.width = width + 'px';
+      preview.style.height = height + 'px';
+      
+      const pos = getRandomPosition(width, height);
       preview.style.left = pos.x + 'px';
       preview.style.top = pos.y + 'px';
       preview.classList.add('visible');
@@ -266,17 +265,21 @@
 
     projects.forEach(project => {
       project.addEventListener('mouseenter', () => {
-        showPreview(project.dataset.preview);
+        const width = parseInt(project.dataset.width) || 150;
+        const height = parseInt(project.dataset.height) || 150;
+        showPreview(project.dataset.preview, width, height);
       });
       project.addEventListener('mouseleave', hidePreview);
     });
 
     if (avatar) {
       avatar.addEventListener('mouseenter', () => {
-        showPreview(avatar.dataset.preview);
+        const width = parseInt(avatar.dataset.width) || 150;
+        const height = parseInt(avatar.dataset.height) || 150;
+        showPreview(avatar.dataset.preview, width, height);
       });
       avatar.addEventListener('mouseleave', hidePreview);
     }
-</script>
+  </script>
 </body>
 </html>
