@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>kichi ~ good luck (a friendly computer virus) – Shyla Nuxol</title>
-  <meta name="description" content="Interactive web experience with oracle-like qualities" />
+  <meta name="description" content="a browser-based chance-operations artwork creating personalized divination experiences" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
     
@@ -58,6 +58,8 @@
     .content li { padding: 0.4rem 0; color: var(--text); }
     .content li::before { content: "· "; color: var(--accent); margin-right: 0.25rem; }
 
+    .quote { font-style: italic; color: var(--accent); margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.1); }
+
     .divider { text-align: center; color: var(--muted); margin: 3rem 0; font-size: 0.9rem; letter-spacing: 0.5em; }
 
     .project-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
@@ -79,17 +81,18 @@
 
   <div class="project-header">
     <h1 class="project-title">kichi ~ good luck (a friendly computer virus)</h1>
-    <p class="project-meta">web experience · JS/HTML/CSS · 2025</p>
+    <p class="project-meta">chance-operations artwork · JS/HTML/CSS · 2025</p>
     <div class="project-tags">
       <span>web dev</span>
-      <span>interactive</span>
-      <span>oracle</span>
-      <span>fortune</span>
+      <span>chance operations</span>
+      <span>divination</span>
+      <span>net art</span>
+      <span>personalization</span>
     </div>
   </div>
 
   <div class="embed-container">
-    <iframe src="https://shylanuxol-hub.github.io/interactive-fortune/" title="kichi ~ good luck"></iframe>
+    <iframe src="https://shylanuxol-hub.github.io/interactive-fortune/" title="kichi ~ good luck" scrolling="no"></iframe>
     <div class="embed-caption">
       <span>interactive ~ experience above</span>
       <a href="https://shylanuxol-hub.github.io/interactive-fortune/" target="_blank">open fullscreen ↗</a>
@@ -97,25 +100,45 @@
   </div>
 
   <div class="content">
+    <p class="quote">"a soft technology of noticing; a desktop of brief omens makes ordinary time, and an ordinary place, feel quietly enchanted."</p>
+
     <h2>about</h2>
-    <p>"Kichi ~ Good Luck (A Friendly Computer Virus)" is an interactive web experience with oracle-like qualities. It almost comes across like a virus but reveals itself to be benevolent, offering fortunes, messages, and moments of unexpected tenderness.</p>
+    <p>"Kichi ~ Good Luck" is a browser-based chance-operations artwork designed to create a unique, intimate divination-like experience for each viewer using personalized "omens." Each time it is experienced, the system generates a small cluster of fortunes, short poetic lines, and occasional images. Some of these are based on the user's first name and birthday, ensuring the session feels unrepeatable.</p>
 
-    <p>The piece plays with our expectations of what a "virus" means in digital space, subverting anxiety into delight.</p>
+    <p>The piece opens with a floating 吉 (the Japanese word for good fortune, "kichi") set against a luminous, Frutiger Aero/early Windows desktop-inspired grass-and-sky field. Viewers enter their first name and birthday at start-up. A sequence of draggable, window-style popups then reveal the personalized content.</p>
 
-    <h2>concept</h2>
-    <p>We're trained to fear computer viruses — they represent loss of control, invasion, harm. But what if a virus wanted to help? What if it spread not destruction but small kindnesses, fortunes, gentle disruptions?</p>
+    <h2>how it works</h2>
+    <p>Fortunes are curated by birth month and first initial. Controlled randomness prevents repetition. When a session begins, the system creates a one-time queue with a list of fortunes to display, then shuffles their order. This queue is stored in sessionStorage, ensuring fortunes don't repeat until the page is reloaded.</p>
 
-    <p>This piece continues my interest in digital mysticism and oracle traditions, translating them into the language of the web. The "virus" becomes a benevolent spirit, the popup a fortune cookie, the interaction a small ritual of openness and trust.</p>
-
-    <h2>process</h2>
-    <p>Built with vanilla HTML, CSS, and JavaScript — no frameworks, just the raw materials of the web. The aesthetic draws from early internet design and the visual language of system alerts and error messages, repurposed for gentler ends.</p>
-
+    <p>The system uses three curatorial constraints:</p>
     <ul>
-      <li>Vanilla HTML/CSS/JavaScript</li>
-      <li>Interactive fortune/oracle system</li>
-      <li>Retro web aesthetics</li>
-      <li>Subversive UX — expectation vs. reality</li>
+      <li>one-time month omen ~ the first line of the user's birth-month text appears once at the start, setting a unique, ritual tone</li>
+      <li>no repeats per session ~ each fortune (text or image) appears only once, making each encounter feel specific</li>
+      <li>identity-aware buckets ~ the first letter of a user's name sorts them into one of four buckets (A-F, G-L, M-R, S-Z, plus a default), blending chance and personality</li>
     </ul>
+
+    <p>Two people with different names and birthdays receive unique omens. For the same user, shuffled fortunes and pop-up arrangements create new micro-narratives each time.</p>
+
+    <h2>aesthetic</h2>
+    <p>The aesthetic references early graphical user interface windows and net-art sensibilities — blue title bars, dialog boxes labeled "system notice," and compact "ok/yes/cancel" buttons. The floating Japanese character symbolizing good fortune centers the field like a quiet beacon. The popups give the feeling that your computer is getting a virus — hopefully a very friendly one.</p>
+
+    <p>All windows are click-and-drag, allowing the viewer to curate their layout and create ephemeral constellations. Image fortunes punctuate the text with small, offbeat icons of tenderness and humor.</p>
+
+    <h2>concept + references</h2>
+    <p>The piece draws on chance (John Cage), Fluxus instructions (Yoko Ono), and early algorithmic graphics (Frieder Nake, Manfred Mohr). It reframes these as a gentle divination machine. Instead of predicting the future, it creates space for attention. Small, ambient prompts nudge noticing.</p>
+
+    <p>I wanted randomness to feel gentle, almost intimate — not cold or arbitrary. By letting the user's month and initial guide selection and avoiding repetition, the system invites us to see coincidence as a kind of care. Each fortune is short; these are openings for the viewer's personal hopes, worries, or longing.</p>
+
+    <h2>technical</h2>
+    <ul>
+      <li>vanilla HTML/CSS/JavaScript ~ no frameworks</li>
+      <li>sessionStorage for queue management</li>
+      <li>shuffle algorithm for controlled randomness</li>
+      <li>draggable windows with z-index management</li>
+      <li>birth month + name initial personalization system</li>
+    </ul>
+
+    <p>A session lasts 5-10 minutes. The software runs in any modern desktop browser without extra installs.</p>
 
     <div class="divider">✦ ✦ ✦</div>
   </div>
