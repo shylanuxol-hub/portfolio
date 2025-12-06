@@ -18,16 +18,8 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    ::selection {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    html {
-      font-size: 17px;
-      scroll-behavior: smooth;
-    }
+    ::selection { background: var(--accent); color: var(--bg); }
+    html { font-size: 17px; scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -39,172 +31,43 @@
       margin: 0 auto;
     }
 
-    a {
-      color: var(--link);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+    a { color: var(--link); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
 
-    a:hover {
-      color: var(--link-hover);
-      text-decoration: underline;
-    }
+    header { margin-bottom: 2rem; }
+    .back-link { font-size: 0.9rem; color: var(--muted); display: inline-block; }
+    .back-link:hover { color: var(--link); }
 
-    header {
-      margin-bottom: 2rem;
-    }
+    .project-header { margin: 2rem 0; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .project-title { font-size: 2.2rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .project-meta { font-size: 0.9rem; color: var(--muted); font-style: italic; }
 
-    .back-link {
-      font-size: 0.9rem;
-      color: var(--muted);
-      display: inline-block;
-    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .project-tags span { padding: 0.3rem 0.7rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; font-size: 0.8rem; color: var(--accent); }
 
-    .back-link:hover {
-      color: var(--link);
-    }
+    .embed-container { margin: 2.5rem 0; background: #000; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+    .embed-container iframe { width: 100%; height: 500px; border: none; display: block; }
+    .embed-caption { padding: 0.75rem 1rem; background: rgba(255,255,255,0.02); font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+    .embed-caption a { font-size: 0.85rem; }
 
-    .project-header {
-      margin: 2rem 0;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    .content { margin: 2.5rem 0; }
+    .content h2 { font-size: 1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 2.5rem 0 1rem; }
+    .content h2:first-child { margin-top: 0; }
+    .content p { margin-bottom: 1.25rem; color: var(--text); }
+    .content ul { list-style: none; margin: 1rem 0; }
+    .content li { padding: 0.4rem 0; color: var(--text); }
+    .content li::before { content: "· "; color: var(--accent); margin-right: 0.25rem; }
 
-    .project-title {
-      font-size: 2.2rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
+    .divider { text-align: center; color: var(--muted); margin: 3rem 0; font-size: 0.9rem; letter-spacing: 0.5em; }
 
-    .project-meta {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .project-tags span {
-      padding: 0.3rem 0.7rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 3px;
-      font-size: 0.8rem;
-      color: var(--accent);
-    }
-
-    .embed-container {
-      margin: 2.5rem 0;
-      background: #000;
-      border-radius: 4px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .embed-container iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      display: block;
-    }
-
-    .embed-caption {
-      padding: 0.75rem 1rem;
-      background: rgba(255,255,255,0.02);
-      font-size: 0.85rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .embed-caption a {
-      font-size: 0.85rem;
-    }
-
-    .content {
-      margin: 2.5rem 0;
-    }
-
-    .content h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 2.5rem 0 1rem;
-    }
-
-    .content h2:first-child {
-      margin-top: 0;
-    }
-
-    .content p {
-      margin-bottom: 1.25rem;
-      color: var(--text);
-    }
-
-    .content ul {
-      list-style: none;
-      margin: 1rem 0;
-    }
-
-    .content li {
-      padding: 0.4rem 0;
-      color: var(--text);
-    }
-
-    .content li::before {
-      content: "· ";
-      color: var(--accent);
-      margin-right: 0.25rem;
-    }
-
-    .divider {
-      text-align: center;
-      color: var(--muted);
-      margin: 3rem 0;
-      font-size: 0.9rem;
-      letter-spacing: 0.5em;
-    }
-
-    .project-nav {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .project-nav a {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .project-nav a:hover {
-      color: var(--link);
-    }
+    .project-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .project-nav a { color: var(--muted); font-size: 0.95rem; }
+    .project-nav a:hover { color: var(--link); }
 
     @media (max-width: 600px) {
-      body {
-        padding: 2rem 1.25rem 4rem;
-        font-size: 16px;
-      }
-      
-      .project-title {
-        font-size: 1.8rem;
-      }
-
-      .embed-container iframe {
-        height: 400px;
-      }
+      body { padding: 2rem 1.25rem 4rem; font-size: 16px; }
+      .project-title { font-size: 1.8rem; }
+      .embed-container iframe { height: 400px; }
     }
   </style>
 </head>
@@ -216,7 +79,7 @@
 
   <div class="project-header">
     <h1 class="project-title">Cybernetic Garden</h1>
-    <p class="project-meta">Generative sketch · p5.js · 2024</p>
+    <p class="project-meta">generative sketch · p5.js · 2024</p>
     <div class="project-tags">
       <span>p5.js</span>
       <span>generative</span>
@@ -228,23 +91,23 @@
   <div class="embed-container">
     <iframe src="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" title="Cybernetic Garden"></iframe>
     <div class="embed-caption">
-      <span>Interactive — explore above</span>
-      <a href="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" target="_blank">Open fullscreen ↗</a>
+      <span>interactive — explore above</span>
+      <a href="https://editor.p5js.org/shylanuxol/full/3Qeh6RwBj" target="_blank">open fullscreen ↗</a>
     </div>
   </div>
 
   <div class="content">
-    <h2>About</h2>
+    <h2>about</h2>
     <p>Cybernetic Garden is a digital ecosystem simulation — a space where algorithmic life grows, evolves, and responds to interaction. It's a meditation on artificial nature and the beauty that can emerge from simple rules.</p>
 
     <p>The garden exists somewhere between the organic and the synthetic, growing forms that feel alive but are clearly computational. It's a place to watch, tend, and wonder at.</p>
 
-    <h2>Concept</h2>
+    <h2>concept</h2>
     <p>I've always been drawn to the idea of digital spaces as gardens — places that grow and change, that require attention but also have their own life. The cybernetic garden is an exploration of what it means to cultivate something that exists only in code.</p>
 
     <p>There's a long tradition of artists working with generative systems and artificial life. This piece sits in that lineage, asking what new forms of beauty might emerge when we let algorithms grow.</p>
 
-    <h2>Process</h2>
+    <h2>process</h2>
     <p>Built in p5.js using generative algorithms and simple rules that produce complex, emergent behavior. The visual language draws from both botanical illustration and circuit diagrams.</p>
 
     <ul>
@@ -258,8 +121,8 @@
   </div>
 
   <nav class="project-nav">
-    <a href="what-were-the-humans-like.html">← Previous: What Were the Humans Like?</a>
-    <a href="rice-balls.html">Next: Rice Balls →</a>
+    <a href="what-were-the-humans-like.html">← previous: What Were the Humans Like?</a>
+    <a href="index.html">all projects →</a>
   </nav>
 
 </body>
