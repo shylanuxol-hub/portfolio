@@ -18,16 +18,8 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    ::selection {
-      background: var(--accent);
-      color: var(--bg);
-    }
-
-    html {
-      font-size: 17px;
-      scroll-behavior: smooth;
-    }
+    ::selection { background: var(--accent); color: var(--bg); }
+    html { font-size: 17px; scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -39,179 +31,43 @@
       margin: 0 auto;
     }
 
-    a {
-      color: var(--link);
-      text-decoration: none;
-      transition: color 0.15s;
-    }
+    a { color: var(--link); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
 
-    a:hover {
-      color: var(--link-hover);
-      text-decoration: underline;
-    }
+    header { margin-bottom: 2rem; }
+    .back-link { font-size: 0.9rem; color: var(--muted); display: inline-block; }
+    .back-link:hover { color: var(--link); }
 
-    /* Header */
-    header {
-      margin-bottom: 2rem;
-    }
+    .project-header { margin: 2rem 0; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .project-title { font-size: 2.2rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .project-meta { font-size: 0.9rem; color: var(--muted); font-style: italic; }
 
-    .back-link {
-      font-size: 0.9rem;
-      color: var(--muted);
-      display: inline-block;
-    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .project-tags span { padding: 0.3rem 0.7rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; font-size: 0.8rem; color: var(--accent); }
 
-    .back-link:hover {
-      color: var(--link);
-    }
+    .embed-container { margin: 2.5rem 0; background: #000; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+    .embed-container iframe { width: 100%; height: 500px; border: none; display: block; }
+    .embed-caption { padding: 0.75rem 1rem; background: rgba(255,255,255,0.02); font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+    .embed-caption a { font-size: 0.85rem; }
 
-    /* Project header */
-    .project-header {
-      margin: 2rem 0;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
+    .content { margin: 2.5rem 0; }
+    .content h2 { font-size: 1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 2.5rem 0 1rem; }
+    .content h2:first-child { margin-top: 0; }
+    .content p { margin-bottom: 1.25rem; color: var(--text); }
+    .content ul { list-style: none; margin: 1rem 0; }
+    .content li { padding: 0.4rem 0; color: var(--text); }
+    .content li::before { content: "· "; color: var(--accent); margin-right: 0.25rem; }
 
-    .project-title {
-      font-size: 2.2rem;
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
+    .divider { text-align: center; color: var(--muted); margin: 3rem 0; font-size: 0.9rem; letter-spacing: 0.5em; }
 
-    .project-meta {
-      font-size: 0.9rem;
-      color: var(--muted);
-      font-style: italic;
-    }
+    .project-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .project-nav a { color: var(--muted); font-size: 0.95rem; }
+    .project-nav a:hover { color: var(--link); }
 
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .project-tags span {
-      padding: 0.3rem 0.7rem;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 3px;
-      font-size: 0.8rem;
-      color: var(--accent);
-    }
-
-    /* Embed */
-    .embed-container {
-      margin: 2.5rem 0;
-      background: #000;
-      border-radius: 4px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .embed-container iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      display: block;
-    }
-
-    .embed-caption {
-      padding: 0.75rem 1rem;
-      background: rgba(255,255,255,0.02);
-      font-size: 0.85rem;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .embed-caption a {
-      font-size: 0.85rem;
-    }
-
-    /* Content sections */
-    .content {
-      margin: 2.5rem 0;
-    }
-
-    .content h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin: 2.5rem 0 1rem;
-    }
-
-    .content h2:first-child {
-      margin-top: 0;
-    }
-
-    .content p {
-      margin-bottom: 1.25rem;
-      color: var(--text);
-    }
-
-    .content ul {
-      list-style: none;
-      margin: 1rem 0;
-    }
-
-    .content li {
-      padding: 0.4rem 0;
-      color: var(--text);
-    }
-
-    .content li::before {
-      content: "· ";
-      color: var(--accent);
-      margin-right: 0.25rem;
-    }
-
-    /* Divider */
-    .divider {
-      text-align: center;
-      color: var(--muted);
-      margin: 3rem 0;
-      font-size: 0.9rem;
-      letter-spacing: 0.5em;
-    }
-
-    /* Footer nav */
-    .project-nav {
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .project-nav a {
-      color: var(--muted);
-      font-size: 0.95rem;
-    }
-
-    .project-nav a:hover {
-      color: var(--link);
-    }
-
-    /* Mobile */
     @media (max-width: 600px) {
-      body {
-        padding: 2rem 1.25rem 4rem;
-        font-size: 16px;
-      }
-      
-      .project-title {
-        font-size: 1.8rem;
-      }
-
-      .embed-container iframe {
-        height: 400px;
-      }
+      body { padding: 2rem 1.25rem 4rem; font-size: 16px; }
+      .project-title { font-size: 1.8rem; }
+      .embed-container iframe { height: 400px; }
     }
   </style>
 </head>
@@ -223,7 +79,7 @@
 
   <div class="project-header">
     <h1 class="project-title">Doomscroller</h1>
-    <p class="project-meta">Browser game · p5.js · 2024</p>
+    <p class="project-meta">browser game · p5.js · 2024</p>
     <div class="project-tags">
       <span>p5.js</span>
       <span>game</span>
@@ -235,23 +91,23 @@
   <div class="embed-container">
     <iframe src="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" title="Doomscroller"></iframe>
     <div class="embed-caption">
-      <span>Interactive — play above</span>
-      <a href="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" target="_blank">Open fullscreen ↗</a>
+      <span>interactive — play above</span>
+      <a href="https://editor.p5js.org/shylanuxol/full/1imkKTtbr" target="_blank">open fullscreen ↗</a>
     </div>
   </div>
 
   <div class="content">
-    <h2>About</h2>
+    <h2>about</h2>
     <p>Doomscroller is a culture jamming browser game that critiques the attention economy. You play as an artist trying to create while being constantly interrupted by phone notifications, popups, and the endless pull of the scroll.</p>
 
     <p>The game puts you in a familiar struggle — the tension between wanting to make something meaningful and the constant digital noise competing for your attention. Every notification is a choice: engage with the distraction or try to stay focused on your work.</p>
 
-    <h2>Concept</h2>
+    <h2>concept</h2>
     <p>The piece emerged from thinking about how our devices have become sites of constant interruption. Social media platforms are designed to capture and hold attention, turning our focus into a commodity. As artists and creators, we're caught in a bind — we need these platforms to share our work, but they're also actively working against the deep focus that creative work requires.</p>
 
     <p>Doomscroller makes this tension playable. It's a small act of culture jamming — using the language of games and notifications to critique the systems that deploy them.</p>
 
-    <h2>Process</h2>
+    <h2>process</h2>
     <p>Built entirely in p5.js, the game uses simple mechanics to create an escalating sense of overwhelm. The notification system was designed to mimic real phone interruptions — familiar sounds, urgent visual language, the dopamine hit of new information.</p>
 
     <ul>
@@ -265,8 +121,8 @@
   </div>
 
   <nav class="project-nav">
-    <a href="portfolio.html">← All projects</a>
-    <a href="what-were-the-humans-like.html">Next: What Were the Humans Like? →</a>
+    <a href="index.html">← all projects</a>
+    <a href="signal-shrine.html">next: Signal Shrine →</a>
   </nav>
 
 </body>
