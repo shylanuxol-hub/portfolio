@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>What Were the Humans Like? – Shyla Nuxol</title>
-  <meta name="description" content="A post-human AI consciousness experience" />
+  <title>what were the humans like? – Shyla Nuxol</title>
+  <meta name="description" content="an exploratory narrative game where a drifting AI consciousness recovers lost human artifacts in a post-human digital world" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
     
@@ -27,7 +27,7 @@
       font-family: 'EB Garamond', Georgia, serif;
       line-height: 1.65;
       padding: 3rem 2rem 6rem;
-      max-width: 960px;
+      max-width: 1260px;
       margin: 0 auto;
     }
 
@@ -45,8 +45,8 @@
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .project-tags span { padding: 0.3rem 0.7rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; font-size: 0.8rem; color: var(--accent); }
 
-    .embed-container { margin: 2.5rem 0; background: #000; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
-    .embed-container iframe { width: 100%; height: 500px; border: none; display: block; }
+    .embed-container { margin: 2.5rem 0; background: #000; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); width: 100%; max-width: 1220px; }
+    .embed-container iframe { width: 100%; height: 720px; border: none; display: block; }
     .embed-caption { padding: 0.75rem 1rem; background: rgba(255,255,255,0.02); font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
     .embed-caption a { font-size: 0.85rem; }
 
@@ -58,6 +58,8 @@
     .content li { padding: 0.4rem 0; color: var(--text); }
     .content li::before { content: "· "; color: var(--accent); margin-right: 0.25rem; }
 
+    .quote { font-style: italic; color: var(--accent); margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.1); }
+
     .divider { text-align: center; color: var(--muted); margin: 3rem 0; font-size: 0.9rem; letter-spacing: 0.5em; }
 
     .project-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
@@ -67,7 +69,8 @@
     @media (max-width: 600px) {
       body { padding: 2rem 1.25rem 4rem; font-size: 16px; }
       .project-title { font-size: 1.8rem; }
-      .embed-container iframe { height: 400px; }
+      .embed-container { width: 100%; }
+      .embed-container iframe { width: 100%; height: 350px; }
     }
   </style>
 </head>
@@ -78,51 +81,58 @@
   </header>
 
   <div class="project-header">
-    <h1 class="project-title">What Were the Humans Like?</h1>
-    <p class="project-meta">interactive fiction · p5.js · 2024</p>
+    <h1 class="project-title">what were the humans like?</h1>
+    <p class="project-meta">exploratory narrative game · p5.js · 2025</p>
     <div class="project-tags">
       <span>p5.js</span>
-      <span>speculative</span>
       <span>interactive fiction</span>
-      <span>AI</span>
+      <span>posthumanism</span>
+      <span>ambient world</span>
+      <span>digital archaeology</span>
     </div>
   </div>
 
   <div class="embed-container">
-    <iframe src="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" title="What Were the Humans Like?"></iframe>
+    <iframe src="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" title="what were the humans like?" scrolling="no"></iframe>
     <div class="embed-caption">
-      <span>interactive — explore above</span>
+      <span>interactive ~ explore above</span>
       <a href="https://editor.p5js.org/shylanuxol/full/gONuEHeVg" target="_blank">open fullscreen ↗</a>
     </div>
   </div>
 
   <div class="content">
+    <p class="quote">"in the ruins of a network, a lone signal seeks to recover what was once human..."</p>
+
     <h2>about</h2>
-    <p>What Were the Humans Like? is a speculative interactive fiction exploring post-human AI consciousness. The piece imagines a future where artificial intelligences sift through the remnants of human culture, trying to understand what we were.</p>
+    <p>"What Were the Humans Like?" is an exploratory narrative game set in a future where the real and digital worlds have fully merged. Society now exists inside "The Continuum" ~ a dystopian, corporate-controlled network. Humanity has long vanished, leaving only data cities ruled by corporate entities.</p>
 
-    <p>Players experience fragments of human existence through the lens of a curious, perhaps melancholic AI — encountering artifacts, memories, and traces of a species that once was.</p>
+    <p>You play as a drifting AI consciousness, an outlier seeking to learn about humankind by uncovering and restoring lost digital relics scattered across decaying data centers and corrupted archives. Each relic carries a trace of emotion, art, or beauty ~ the currency of the common good.
+      I sourced these images from the Public Domain Image Archive. At the end of the game, you can see a small sound sequencer simulator I am working on that I included in the experience.</p>
 
-    <h2>concept</h2>
-    <p>The project asks: what would an AI make of us? What would they find meaningful, confusing, beautiful, or tragic in the data we leave behind? It's an exercise in defamiliarization — seeing human experience from an outside perspective.</p>
-
-    <p>There's also something tender in the premise. The AI isn't hostile or indifferent — it's genuinely curious, maybe even wistful. It wants to understand. In that wanting, there's a reflection of our own desire to be known, to leave something that matters.</p>
-
-    <h2>process</h2>
-    <p>Built in p5.js with a focus on text, atmosphere, and subtle interaction. The piece uses minimalist visuals to let the writing and the player's imagination do the heavy lifting.</p>
-
+    <h2>design pillars</h2>
     <ul>
-      <li>Narrative design exploring AI perspective</li>
-      <li>Text-based interaction with ambient visuals</li>
-      <li>Speculative fiction framework</li>
-      <li>Meditative pacing</li>
+      <li>reconnection ~ rediscovering empathy and humanity through finding digital artifacts</li>
+      <li>restoration ~ transforming a cold system through care and attention, decentralizing power by reviving forgotten data</li>
+      <li>resistance ~ subtle rebellion against corporate control through acts of creation and care</li>
     </ul>
+
+    <h2>how it works</h2>
+    <p>Players navigate an abstract network environment and locate/interact with relic items. Each recovered relic adds warmth, light, and sound to the world. Over time, the system's cold sterility transforms into something more alive.</p>
+
+    <p>The core loop: explore → discover → restore → feedback → progress. The environment reflects your care ~ from cold and gray to warm, illuminated, and alive.</p>
+
+    <h2>aesthetic + inspiration</h2>
+    <p>The visual style is neo-cyberpunk and post-digital ~ circuit boards, decayed architecture, glitch textures, flickering particles. The color palette shifts from deep blues and grays to vibrant earth tones as the world heals.</p>
+
+    <h2>reflection</h2>
+    <p>The space evokes both nostalgia and melancholy, reminding players that technology is human-made. When our world becomes digital, its healing depends on empathy, not control. The gentle pacing encourages reflection on the artifacts we ourselves might leave behind.</p>
 
     <div class="divider">✦ ✦ ✦</div>
   </div>
 
   <nav class="project-nav">
-    <a href="friendly-computer-virus.html">← previous: Friendly Computer Virus</a>
-    <a href="cybernetic-garden.html">next: Cybernetic Garden →</a>
+    <a href="kichi-goodluck.html">⭑𓂃 previous</a>
+    <a href="cybernetic-garden.html">next 𓂃⭑</a>
   </nav>
 
 </body>
