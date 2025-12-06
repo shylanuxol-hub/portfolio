@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Signal Shrine – Shyla Nuxol</title>
-  <meta name="description" content="Interactive installation using CRT televisions, NFC oracle cards, and Max/MSP" />
+  <title>signal shrine – Shyla Nuxol</title>
+  <meta name="description" content="interactive installation using CRT televisions, NFC oracle cards, Max/MSP/Jitter, and TouchDesigner" />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
     
@@ -45,10 +45,36 @@
     .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .project-tags span { padding: 0.3rem 0.7rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; font-size: 0.8rem; color: var(--accent); }
 
-    .video-container { margin: 2.5rem 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-container { margin: 2.5rem 0 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
     .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     .video-caption { padding: 0.75rem 1rem; background: rgba(255,255,255,0.02); font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.08); border-top: none; border-radius: 0 0 4px 4px; }
     .video-caption a { font-size: 0.85rem; }
+
+    /* Photo Gallery */
+    .photo-gallery { margin: 2rem 0 2.5rem; }
+    .photo-gallery-title { font-size: 0.85rem; color: var(--muted); margin-bottom: 1rem; font-style: italic; }
+    .photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+    .photo-grid.single { grid-template-columns: 1fr; }
+    .photo-grid.triple { grid-template-columns: repeat(3, 1fr); }
+    .photo-grid img { 
+      width: 100%; 
+      height: auto; 
+      border-radius: 4px; 
+      border: 1px solid rgba(255,255,255,0.08); 
+      display: block;
+      transition: opacity 0.2s;
+    }
+    .photo-grid img:hover { opacity: 0.85; }
+    .photo-grid .full-width { grid-column: 1 / -1; }
+    .photo-caption { 
+      font-size: 0.8rem; 
+      color: var(--muted); 
+      text-align: center; 
+      margin-top: 0.5rem; 
+      font-style: italic; 
+    }
+
+    .quote { font-style: italic; color: var(--accent); margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.1); }
 
     .content { margin: 2.5rem 0; }
     .content h2 { font-size: 1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 2.5rem 0 1rem; }
@@ -67,6 +93,8 @@
     @media (max-width: 600px) {
       body { padding: 2rem 1.25rem 4rem; font-size: 16px; }
       .project-title { font-size: 1.8rem; }
+      .photo-grid { grid-template-columns: 1fr; }
+      .photo-grid.triple { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -77,13 +105,14 @@
   </header>
 
   <div class="project-header">
-    <h1 class="project-title">Signal Shrine</h1>
-    <p class="project-meta">interactive installation · Max/MSP, Arduino, CRT · 2024</p>
+    <h1 class="project-title">signal shrine</h1>
+    <p class="project-meta">interactive installation · Max/MSP/Jitter, TouchDesigner, Arduino, CRT · 2025</p>
     <div class="project-tags">
       <span>installation</span>
-      <span>Max/MSP</span>
+      <span>Max/MSP/Jitter</span>
+      <span>TouchDesigner</span>
       <span>Arduino</span>
-      <span>NFC/RFID</span>
+      <span>NFC</span>
       <span>CRT</span>
       <span>digital mysticism</span>
     </div>
@@ -99,40 +128,39 @@
 
   <div class="content">
     <h2>about</h2>
-    <p>Signal Shrine is an interactive installation that reimagines oracle traditions through modern technology. Visitors approach a shrine of CRT televisions and draw physical NFC cards — each card triggers unique video effects, audio, and visual responses, creating a moment of digital divination.</p>
+    <p>"Signal Shrine" is an interactive installation that reimagines oracle traditions through modern technology. Visitors approach a shrine of CRT televisions and draw physical NFC cards ~ each card triggers unique video effects and responses, creating a moment of digital divination.</p>
 
     <p>The piece sits at the intersection of ancient ritual and contemporary technology, asking what it means to seek guidance in an age of screens and signals.</p>
 
     <h2>concept</h2>
-    <p>I've been thinking a lot about technology as ritual — how our interactions with devices have taken on qualities once reserved for sacred objects. We consult our phones like oracles, scrolling for signs, seeking answers in the feed.</p>
+    <p>I've been thinking a lot about technology as ritual ~ how our interactions with devices have taken on qualities once reserved for sacred objects. We consult our phones like oracles, scrolling for signs, seeking answers in the feed.</p>
 
-    <p>Signal Shrine makes this implicit ritual explicit. The CRT televisions evoke both nostalgia and a kind of altar-like presence. The NFC cards are physical talismans — you hold them, choose them, offer them to the shrine. The video feedback and glitches become a form of digital prophecy.</p>
+    <p>This piece makes this implicit ritual explicit. The CRT televisions evoke both nostalgia and a kind of altar-like presence. The NFC cards are physical talismans ~ you hold them, choose them, offer them to the shrine. The video feedback and glitches become a form of digital prophecy.</p>
 
     <p>It's playful but also sincere. There's something genuinely meaningful about creating space for wonder and mystery within technology.</p>
 
     <h2>technical</h2>
-    <p>The installation uses Arduino with RFID readers to detect which NFC card is presented. Each card has a unique ID that triggers specific responses in Max/MSP — video effects, feedback loops, sound design. The output displays on CRT televisions, whose inherent visual qualities (scan lines, warmth, slight blur) add to the ritual atmosphere.</p>
+    <p>The installation uses Arduino with NFC readers to detect which NFC card is presented. Each card has a unique ID that triggers specific responses in Max/MSP: video effects, feedback loops, etc. The output displays on CRT televisions, whose inherent visual qualities (scan lines, warmth, slight blur) add to the ritual atmosphere.</p>
 
     <ul>
-      <li>Arduino with RFID/NFC readers</li>
-      <li>Custom NFC oracle cards</li>
-      <li>Max/MSP/Jitter for video processing</li>
-      <li>Real-time video effects and feedback</li>
+      <li>Arduino with NFC readers</li>
+      <li>custom NFC oracle cards</li>
+      <li>Max/MSP/Jitter/TouchDesigner for video processing</li>
+      <li>real-time video effects and feedback</li>
       <li>CRT televisions as display</li>
-      <li>Generative sound design</li>
     </ul>
 
     <h2>process</h2>
-    <p>This project brought together several threads in my practice — physical computing, video processing, and an ongoing interest in digital mysticism. The technical challenge was getting reliable communication between the Arduino RFID readers and Max/MSP, then designing video effects that felt both responsive and mysterious.</p>
+    <p>This project brought together several threads in my practice ~ physical computing, video processing, and an ongoing interest in digital mysticism. The technical challenge was getting reliable communication between all the parts.</p>
 
-    <p>The CRTs were sourced from thrift stores and online listings — each one has its own character and quirks, which became part of the piece's personality.</p>
+    <p>The CRTs were sourced from thrift stores and online listings ~ each one has its own character and quirks, which became part of the piece's personality.</p>
 
     <div class="divider">✦ ✦ ✦</div>
   </div>
 
   <nav class="project-nav">
-    <a href="doomscroller.html">← previous: Doomscroller</a>
-    <a href="friendly-computer-virus.html">next: Friendly Computer Virus →</a>
+    <a href="doomscroller.html">⭑𓂃 previous</a>
+    <a href="friendly-computer-virus.html">next 𓂃⭑</a>
   </nav>
 
 </body>
