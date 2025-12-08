@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>collective static – Shyla Nuxol</title>
+  <meta name="description" content="a fluxus-inspired participatory piece where collective marks become collective motion" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+    
+    :root {
+      --bg: #0a0a0c;
+      --text: #ffffff;
+      --muted: #aaa;
+      --link: #ffb8d4;
+      --link-hover: #fff;
+      --accent: #ffb8d4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: var(--accent); color: var(--bg); }
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.65;
+      padding: 3rem 2rem 6rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    a { color: var(--link); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    header { margin-bottom: 2rem; }
+    .back-link { font-size: 0.9rem; color: var(--muted); display: inline-block; }
+    .back-link:hover { color: var(--link); }
+
+    .project-header { margin: 2rem 0; padding-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .project-title { font-size: 2.2rem; font-weight: 500; margin-bottom: 0.5rem; }
+    .project-meta { font-size: 0.9rem; color: var(--muted); font-style: italic; }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+    .project-tags span { padding: 0.3rem 0.7rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 3px; font-size: 0.8rem; color: var(--accent); }
+
+    .embed-container { margin: 2.5rem 0; background: #000; border-radius: 4px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); }
+    .embed-container iframe { width: 100%; height: 70vh; min-height: 500px; max-height: 750px; border: none; display: block; }
+    .embed-caption { padding: 0.75rem 1rem; background: rgba(255,255,255,0.02); font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; }
+    .embed-caption a { font-size: 0.85rem; }
+
+    .video-container { margin: 2.5rem 0 0; position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 4px; border: 1px solid rgba(255,255,255,0.08); }
+    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+    .video-caption { padding: 0.75rem 1rem; background: rgba(255,255,255,0.02); font-size: 0.85rem; color: var(--muted); display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.08); border-top: none; border-radius: 0 0 4px 4px; }
+    .video-caption a { font-size: 0.85rem; }
+
+    .content { margin: 2.5rem 0; max-width: 960px; }
+    .content h2 { font-size: 1rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin: 2.5rem 0 1rem; }
+    .content h2:first-child { margin-top: 0; }
+    .content p { margin-bottom: 1.25rem; color: var(--text); }
+    .content ul { list-style: none; margin: 1rem 0; }
+    .content li { padding: 0.4rem 0; color: var(--text); }
+    .content li::before { content: "· "; color: var(--accent); margin-right: 0.25rem; }
+
+    .quote { font-style: italic; color: var(--accent); margin: 1.5rem 0; padding-left: 1rem; border-left: 2px solid rgba(255,255,255,0.1); }
+
+    .instructions { 
+      margin: 2rem 0; 
+      padding: 1.5rem; 
+      background: rgba(255,255,255,0.02); 
+      border: 1px solid rgba(255,255,255,0.08); 
+      border-radius: 4px;
+      font-style: italic;
+    }
+    .instructions-title { 
+      font-size: 0.85rem; 
+      color: var(--accent); 
+      margin-bottom: 1rem; 
+      text-transform: uppercase; 
+      letter-spacing: 0.1em; 
+    }
+    .instructions ol { 
+      list-style: none; 
+      counter-reset: step; 
+    }
+    .instructions li { 
+      padding: 0.3rem 0; 
+      counter-increment: step; 
+    }
+    .instructions li::before { 
+      content: counter(step) ". "; 
+      color: var(--accent); 
+    }
+
+    .divider { text-align: center; color: var(--muted); margin: 3rem 0; font-size: 0.9rem; letter-spacing: 0.5em; }
+
+    .project-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; max-width: 960px; }
+    .project-nav a { color: var(--muted); font-size: 0.95rem; }
+    .project-nav a:hover { color: var(--link); }
+
+    @media (max-width: 600px) {
+      body { padding: 2rem 1.25rem 4rem; font-size: 16px; }
+      .project-title { font-size: 1.8rem; }
+      .embed-container iframe { height: 60vh; min-height: 350px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-link">⭑𓂃 back to portfolio</a>
+  </header>
+
+  <div class="project-header">
+    <h1 class="project-title">collective static</h1>
+    <p class="project-meta">participatory performance · fluxus score · 2025</p>
+    <div class="project-tags">
+      <span>fluxus</span>
+      <span>participatory</span>
+      <span>CRT</span>
+      <span>animation</span>
+      <span>collective authorship</span>
+    </div>
+  </div>
+
+  <div class="embed-container">
+    <iframe src="https://shylanuxol-hub.github.io/collective-static/" title="collective static" scrolling="no"></iframe>
+    <div class="embed-caption">
+      <a href="https://shylanuxol-hub.github.io/collective-static/" target="_blank">open fullscreen ↗</a>
+    </div>
+  </div>
+
+  <div class="video-container">
+    <iframe src="https://www.youtube.com/embed/lmFvMCiOrRg" title="collective static documentation" allowfullscreen></iframe>
+  </div>
+  <div class="video-caption">
+    <span>documentation video</span>
+    <a href="https://www.youtube.com/watch?v=lmFvMCiOrRg" target="_blank">watch on YouTube ↗</a>
+  </div>
+
+  <div class="content">
+    <p class="quote">"sometimes, art is less about what's made, and more about how it's made… and who makes it, together ^_^"</p>
+
+    <div class="instructions">
+      <div class="instructions-title">score</div>
+      <ol>
+        <li>take pen and device</li>
+        <li>add something to the digital canvas</li>
+        <li>return the device</li>
+        <li>wait a few moments</li>
+        <li>watch the collective static</li>
+      </ol>
+    </div>
+
+    <h2>about</h2>
+    <p>"Collective Static" is a Fluxus-inspired participatory performance where individual marks become collective motion. Each participant is given an iPad and a stylus with only 30 seconds to draw. After each contribution, the brush, color, or thickness shifts slightly. The drawings become frames in an animation that no one sees until the very end.</p>
+
+    <p>The final animation is displayed on a CRT monitor ~ old technology paired with new, connected through a tangle of adapters and cables. The translation between media is part of the work: the way it travels, distorts, and re-emerges in another form.</p>
+
+    <h2>concept</h2>
+    <p>The piece reflects core fluxus values: process over product, collective over individual. Each person's contribution is absorbed into a larger flow. No one owns the piece. Every mark dissolves into accumulative, ephemeral authorship.</p>
+
+    <p>The setup itself is intentional ~ iPad, stylus, cables, adapters, CRT. The audience doesn't just see the drawings; they see the mediation, the delay, the translation. The machine is part of the work. This is also a commentary on the lengths people will go to for vintage aesthetics, and how past technologies keep resurfacing in the present.</p>
+
+    <h2>process</h2>
+    <p>The piece moves from action to watching, from playful immediacy to contemplative stillness. Participants engage without overthinking, acting quickly and lightly. The randomness and humor echo fluxus' anti-elitist spirit, yet my hope is that the structure still points to deeper questions about authorship, technology, and how we make art together.</p>
+
+    <ul>
+      <li>iPad with Procreate in flipbook mode</li>
+      <li>30-second drawing constraint per participant</li>
+      <li>brush/color/thickness variations between frames</li>
+      <li>USB-C → HDMI → HDMI2AV → RCA composite → CRT</li>
+      <li>final animation revealed only at the end</li>
+    </ul>
+
+    <div class="divider">✦ ✦ ✦</div>
+  </div>
+
+  <nav class="project-nav">
+    <a href="whatwerethehumanslike?.html">⭑𓂃 previous</a>
+    <a href="cyberneticgarden.html">next 𓂃⭑</a>
+  </nav>
+
+</body>
+</html>
