@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>resume – Shyla Nuxol</title>
+  <meta name="description" content="Resume of Shyla Nuxol - interactive media artist and creative coder" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+    
+    :root {
+      --bg: #0a0a0c;
+      --text: #ffffff;
+      --muted: #aaa;
+      --link: #ffb8d4;
+      --link-hover: #fff;
+      --accent: #ffb8d4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    ::selection { background: var(--accent); color: var(--bg); }
+    html { font-size: 17px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'EB Garamond', Georgia, serif;
+      line-height: 1.65;
+      padding: 3rem 2rem 6rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    a { color: var(--link); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    header { margin-bottom: 2rem; }
+    .back-link { font-size: 0.9rem; color: var(--muted); display: inline-block; }
+    .back-link:hover { color: var(--link); }
+
+    .resume-header { 
+      margin: 2rem 0; 
+      padding-bottom: 1.5rem; 
+      border-bottom: 1px solid rgba(255,255,255,0.08); 
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .resume-name { font-size: 2.2rem; font-weight: 500; margin-bottom: 0.25rem; }
+    .resume-contact { font-size: 0.9rem; color: var(--muted); }
+    .resume-contact a { color: var(--accent); }
+
+    .download-btn {
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 4px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .download-btn:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--accent);
+      text-decoration: none;
+    }
+
+    .resume-section { margin: 2.5rem 0; }
+    .resume-section h2 { 
+      font-size: 0.9rem; 
+      font-weight: 500; 
+      letter-spacing: 0.15em; 
+      text-transform: uppercase; 
+      color: var(--accent); 
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .resume-item { margin-bottom: 1.75rem; }
+    .resume-item:last-child { margin-bottom: 0; }
+    .resume-item-header { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+    .resume-item-title { font-size: 1.1rem; font-weight: 500; }
+    .resume-item-date { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+    .resume-item-subtitle { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.5rem; }
+    
+    .resume-item ul { list-style: none; margin: 0.5rem 0 0 0; }
+    .resume-item li { padding: 0.2rem 0; font-size: 0.95rem; color: var(--text); }
+    .resume-item li::before { content: "· "; color: var(--accent); margin-right: 0.25rem; }
+
+    .skills-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+      gap: 1.5rem; 
+    }
+    .skills-category h3 { 
+      font-size: 0.85rem; 
+      color: var(--muted); 
+      margin-bottom: 0.5rem; 
+      font-weight: 400;
+      font-style: italic;
+    }
+    .skills-category p { font-size: 0.95rem; }
+
+    .project-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    .project-nav a { color: var(--muted); font-size: 0.95rem; }
+    .project-nav a:hover { color: var(--link); }
+
+    @media (max-width: 600px) {
+      body { padding: 2rem 1.25rem 4rem; font-size: 16px; }
+      .resume-name { font-size: 1.8rem; }
+      .resume-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="back-link">⭑𓂃 back to portfolio</a>
+  </header>
+
+  <div class="resume-header">
+    <div>
+      <h1 class="resume-name">Shyla Nuxol</h1>
+      <p class="resume-contact">
+        <a href="mailto:shylanuxol@gmail.com">shylanuxol@gmail.com</a> · Orlando, Florida
+      </p>
+    </div>
+    <a href="resume.pdf" class="download-btn" download>download PDF ↓</a>
+  </div>
+
+  <div class="resume-section">
+    <h2>education</h2>
+    
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">University of Central Florida</span>
+        <span class="resume-item-date">expected Spring 2027</span>
+      </div>
+      <p class="resume-item-subtitle">Master of Arts in Digital Media (Studio Track)</p>
+      <ul>
+        <li>focusing on interactive storytelling, digital art, emerging technology, and user interaction design</li>
+        <li>designing interactive installations and web-based art exploring human–technology relationships</li>
+        <li>working with JavaScript, HTML/CSS, Max/MSP, TouchDesigner, Arduino, and Adobe Creative Cloud</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">University of Central Florida</span>
+        <span class="resume-item-date">2019–2023</span>
+      </div>
+      <p class="resume-item-subtitle">B.S. Psychology · B.A. Human Communication</p>
+      <ul>
+        <li>GPA: 3.8 · Bright Futures Scholarship · Dean's List · Honor Roll</li>
+        <li>Vice President of Undergraduate Research Readiness</li>
+        <li>Secretary of SSDP</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>experience</h2>
+    
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Second Eclipse</span>
+        <span class="resume-item-date">April 2023–August 2025</span>
+      </div>
+      <p class="resume-item-subtitle">Digital Marketing Strategist</p>
+      <ul>
+        <li>enhanced website SEO and online visibility through analytics-driven content strategies</li>
+        <li>collaborated with interdisciplinary teams to develop data-informed campaigns</li>
+        <li>utilized analytics tools and data to track and optimize SEO performance</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Orlando Psychology Associates</span>
+        <span class="resume-item-date">August 2022–April 2023</span>
+      </div>
+      <p class="resume-item-subtitle">Intern</p>
+      <ul>
+        <li>supported digital record management and patient communication while maintaining HIPAA compliance</li>
+        <li>optimized internal workflows through digital tools and process documentation</li>
+        <li>trained incoming interns and assisted with administrative and research-related tasks</li>
+      </ul>
+    </div>
+
+    <div class="resume-item">
+      <div class="resume-item-header">
+        <span class="resume-item-title">Source2</span>
+        <span class="resume-item-date">October 2020–August 2022</span>
+      </div>
+      <p class="resume-item-subtitle">Intern, Social Media Marketing, & HR Coordinator</p>
+      <ul>
+        <li>created multimedia marketing campaigns using Adobe Creative Cloud and HubSpot</li>
+        <li>conducted data analysis to optimize social media and recruitment strategies</li>
+        <li>contributed to digital documentation and user-facing content creation</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="resume-section">
+    <h2>skills</h2>
+    <div class="skills-grid">
+      <div class="skills-category">
+        <h3>tools + technologies</h3>
+        <p>Adobe Creative Cloud, Procreate, Max/MSP, TouchDesigner, Arduino, Ableton, Blender</p>
+      </div>
+      <div class="skills-category">
+        <h3>programming</h3>
+        <p>JavaScript, HTML, CSS</p>
+      </div>
+      <div class="skills-category">
+        <h3>media production</h3>
+        <p>Photography, Audio Recording, Video Editing, Digital Art</p>
+      </div>
+      <div class="skills-category">
+        <h3>general</h3>
+        <p>Interdisciplinary Collaboration, Project Management, Technical Assistance, Creative Problem-solving</p>
+      </div>
+    </div>
+  </div>
+
+  <nav class="project-nav">
+    <a href="index.html">⭑𓂃 back to portfolio</a>
+  </nav>
+
+</body>
+</html>
