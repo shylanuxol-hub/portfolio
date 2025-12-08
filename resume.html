@@ -99,18 +99,10 @@
     .resume-item li { padding: 0.2rem 0; font-size: 0.95rem; color: var(--text); }
     .resume-item li::before { content: "· "; color: var(--accent); margin-right: 0.25rem; }
 
-    .skills-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
-      gap: 1.5rem; 
-    }
-    .skills-category h3 { 
-      font-size: 0.85rem; 
-      color: var(--muted); 
-      margin-bottom: 0.5rem; 
-      font-weight: 400;
-      font-style: italic;
-    }
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem 2rem; }
+    
+    .skills-category h3 { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.5rem; font-weight: 400; font-style: italic; }
+
     .skills-category p { font-size: 0.95rem; }
 
     .project-nav { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.08); }
